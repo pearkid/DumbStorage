@@ -1,0 +1,1 @@
+ModLoader.addOverride("/terrain.png", "/DumbStorage/SnadStone.png")
