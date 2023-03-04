@@ -6,11 +6,11 @@ public class mod_DumbStorage extends BaseMod {
     public static int texture1 = ModLoader.addOverride("/terrain.png", "/DumbStorage/Dirts1.png");
     public static int texture2 = ModLoader.addOverride("/terrain.png", "/DumbStorage/NonupalDirts.png");
     public static int texture3 = ModLoader.addOverride("/terrain.png", "/DumbStorage/SnadStone.png");
-    @MLProp(name="snadStone", info="The blockId for gravityBlock - snadStone", min=0, max=255)
+    @MLProp
     public static int snadStoneID = 255;
-    @MLProp(name="dirts", info="The blockId for block - dirts", min=0, max=255)
+    @MLProp
     public static int dirtsID = 254;
-    @MLProp(name="test", info="The blockId for block - test", min=0, max=255)
+    @MLProp
     public static int testID = 253;
     public static final Block snadStone = (new BlockSnadStone(snadStoneID, texture3)).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setBlockName("snadStone");
     public static final Block dirts = (new BlockDirts(dirtsID, texture1)).setHardness(0.5F).setStepSound(Block.soundGravelFootstep).setBlockName("dirts");
