@@ -26,7 +26,7 @@ public class BlockDirts extends Block {
 		if (i2 == 3){
 			return this.blockIndexInTexture = mod_DumbStorage.texture5;
 		}
-		return this.blockIndexInTexture = mod_DumbStorage.texture0;
+		return this.blockIndexInTexture;
 
 	}
 
