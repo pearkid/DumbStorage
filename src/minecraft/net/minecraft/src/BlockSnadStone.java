@@ -4,9 +4,47 @@ import java.util.Random;
 
 public class BlockSnadStone extends Block {
     public static boolean fallInstantly = false;
+    public static final String[] sandstonenames = new String[]{"sone", "stwo", "sthree", "sfour", "gone", "gtwo", "gthree", "gfour"};
 
-    public BlockSnadStone(int i1, int i2) {
-        super(i1, i2, Material.rock);
+    public BlockSnadStone(int i1) {
+        super(i1, 3, Material.rock);
+    }
+    public int getBlockTextureFromSideAndMetadata(int i1, int i2) {
+        if(i2 == 0) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture3;
+        }
+        if (i2 == 1) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture6;
+        }
+        if (i2 == 2) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture7;
+        }
+        if (i2 == 3) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture8;
+        }
+        if (i2 == 4) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture9;
+        }
+        if (i2 == 5) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture10;
+        }
+        if (i2 == 6) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture11;
+        }
+        if (i2 == 7) {
+            return this.blockIndexInTexture = mod_DumbStorage.texture12;
+        }
+        return this.blockIndexInTexture;
+
+    }
+    public int getBlockTextureFromSide(int i1) {
+        return this.getBlockTextureFromSideAndMetadata(i1, 0);
+    }
+    public int idDropped(int i1, Random random2) {
+        return mod_DumbStorage.snadStone.blockID;
+    }
+    protected int damageDropped(int i1) {
+        return i1;
     }
 
     public void onBlockAdded(World world1, int i2, int i3, int i4) {
