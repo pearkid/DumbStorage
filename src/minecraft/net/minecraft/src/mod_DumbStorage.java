@@ -19,7 +19,7 @@ public class mod_DumbStorage extends BaseMod {
     public static Block dirts;
     public static Block test;
     public String Version () {
-        return "DumbStoragev1";
+        return "DumbStorage 0.1.1";
     }
     public mod_DumbStorage(){
 
