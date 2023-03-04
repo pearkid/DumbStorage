@@ -1,7 +1,7 @@
 package net.minecraft.src;
 
 public class mod_DumbStorage extends BaseMod {
-    public boolean testenabled = true;
+    public boolean testenabled = false;
     public static int texture0 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
     public static int texture1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
     public static int texture2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/DuoDirts.png");
@@ -40,7 +40,7 @@ public class mod_DumbStorage extends BaseMod {
         ModLoader.AddLocalization("tile.dirts.solo.name", "Dirts");
         ModLoader.AddLocalization("tile.dirts.duo.name", "Nonuple Dirts");
         ModLoader.AddLocalization("tile.dirts.trio.name", "Unoctogintuple Dirts");
-        ModLoader.AddLocalization("tile.dirts.quad.name", "Duoviginseptingentuple Dirts");
+        ModLoader.AddLocalization("tile.dirts.quad.name", "Nonaduoviginseptingentuple Dirts");
 
 
         ModLoader.AddRecipe(new ItemStack(Block.lockedChest, 4), new Object[]{"X", Character.valueOf('X'), Block.chest});
