@@ -6,7 +6,7 @@ public class BlockTest extends Block {
 	public static final String[] testnames = new String[]{"one", "two", "three", "four"};
 
 	public BlockTest(int i1) {
-		super(i1, 14, Material.rock);
+		super(i1, 14, Material.ground);
 		this.setLightOpacity(255);
 	}
 
