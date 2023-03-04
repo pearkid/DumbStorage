@@ -12,13 +12,18 @@ public class mod_DumbStorage extends BaseMod {
     public static int dirtsID = 254;
     @MLProp
     public static int testID = 253;
-    public static final Block snadStone = (new BlockSnadStone(snadStoneID, texture3)).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setBlockName("snadStone");
-    public static final Block dirts = (new BlockDirts(dirtsID, texture1)).setHardness(0.5F).setStepSound(Block.soundGravelFootstep).setBlockName("dirts");
-    public static final Block test = (new BlockTest(testID)).setHardness(0.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("test");
+
+    public static Block snadStone;
+    public static Block dirts;
+    public static Block test;
     public String Version () {
         return "DumbStoragev1";
     }
     public mod_DumbStorage(){
+
+        snadStone = (new BlockSnadStone(snadStoneID, texture3)).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setBlockName("snadStone");
+        dirts = (new BlockDirts(dirtsID, texture1)).setHardness(0.5F).setStepSound(Block.soundGravelFootstep).setBlockName("dirts");
+        test = (new BlockTest(testID)).setHardness(0.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("test");
 
         ModLoader.RegisterBlock(snadStone);
         ModLoader.RegisterBlock(dirts);
