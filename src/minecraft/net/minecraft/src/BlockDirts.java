@@ -8,7 +8,7 @@ public class BlockDirts extends Block {
 	public static final String[] dirtsnames = new String[]{"solo", "duo", "trio", "quad"};
 
 	public BlockDirts(int i1) {
-		super(i1, 14, Material.rock);
+		super(i1, 14, Material.ground);
 		this.setLightOpacity(255);
 	}
 
@@ -36,7 +36,7 @@ public class BlockDirts extends Block {
 
 
 	public int idDropped(int i1, Random random2) {
-		return mod_DumbStorage.test.blockID;
+		return mod_DumbStorage.dirts.blockID;
 	}
 
 	protected int damageDropped(int i1) {
