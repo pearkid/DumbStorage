@@ -5,11 +5,14 @@ import java.util.Random;
 public class BlockSnadStone extends Block {
     public static boolean fallInstantly = false;
     public static final String[] sandstonenames = new String[]{"sone", "stwo", "sthree", "sfour", "gone", "gtwo", "gthree", "gfour"};
+    public static int damage = 2;
 
     public BlockSnadStone(int i1) {
         super(i1, 3, Material.rock);
     }
+
     public int getBlockTextureFromSideAndMetadata(int i1, int i2) {
+        damage = i2;
         if(i2 == 0) {
             return this.blockIndexInTexture = mod_DumbStorage.texture3;
         }
@@ -34,17 +37,19 @@ public class BlockSnadStone extends Block {
         if (i2 == 7) {
             return this.blockIndexInTexture = mod_DumbStorage.texture12;
         }
+        damage = i2;
         return this.blockIndexInTexture;
 
     }
+
     public int getBlockTextureFromSide(int i1) {
         return this.getBlockTextureFromSideAndMetadata(i1, 0);
     }
     public int idDropped(int i1, Random random2) {
         return mod_DumbStorage.snadStone.blockID;
     }
-    protected int damageDropped(int i1) {
-        return i1;
+    protected int damageDropped(int damage) {
+        return damage;
     }
 
     public void onBlockAdded(World world1, int i2, int i3, int i4) {
@@ -63,7 +68,7 @@ public class BlockSnadStone extends Block {
         if(canFallBelow(world1, i2, i3 - 1, i4) && i3 >= 0) {
             byte b8 = 32;
             if(!fallInstantly && world1.checkChunksExist(i2 - b8, i3 - b8, i4 - b8, i2 + b8, i3 + b8, i4 + b8)) {
-                EntityFallingSand entityFallingSand9 = new EntityFallingSand(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID);
+                EntityFallingSand2 entityFallingSand9 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage);
                 world1.entityJoinedWorld(entityFallingSand9);
             } else {
                 world1.setBlockWithNotify(i2, i3, i4, 0);

@@ -2,6 +2,7 @@ package net.minecraft.src;
 
 public class mod_DumbStorage extends BaseMod {
     public boolean testenabled = true;
+    public boolean loadtextures = false;
     public static int texture0 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
     public static int texture1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
     public static int texture2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/DuoDirts.png");
@@ -16,12 +17,29 @@ public class mod_DumbStorage extends BaseMod {
     public static int texture11 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/threeGarvel.png");
     public static int texture12 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/fourGarvel.png");
 
+    /*public static int texture0 = 0;
+    public static int texture1 = 1;
+    public static int texture2 = 2;
+    public static int texture3 = 3;
+    public static int texture4 = 4;
+    public static int texture5 = 5;
+    public static int texture6 = 6;
+    public static int texture7 = 7;
+    public static int texture8 = 8;
+    public static int texture9 = 9;
+    public static int texture10 = 10;
+    public static int texture11 = 11;
+    public static int texture12 = 12;*/
+
     @MLProp
     public static int snadStoneID = 255;
     @MLProp
     public static int dirtsID = 254;
     @MLProp
     public static int testID = 253;
+
+    @MLProp
+    public static int FSid = 50;
 
     public static Block snadStone;
     public static Block dirts;
@@ -38,6 +56,8 @@ public class mod_DumbStorage extends BaseMod {
         ModLoader.RegisterBlock(snadStone, ItemSnadStone.class);
         ModLoader.RegisterBlock(dirts, ItemDirts.class);
         ModLoader.RegisterBlock(test, ItemTest.class);
+
+        ModLoader.RegisterEntityID(EntityFallingSand2.class, "fallingsand2",FSid);
 
         ModLoader.AddLocalization("tile.dirts.name", "Dirts");
         ModLoader.AddLocalization("tile.snadStone.name", "Snadstone");

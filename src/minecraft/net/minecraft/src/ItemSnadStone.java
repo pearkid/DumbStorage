@@ -1,8 +1,8 @@
 package net.minecraft.src;
 
 public class ItemSnadStone extends ItemBlock {
-	public ItemSnadStone(int i1) {
-		super(i1);
+	public ItemSnadStone(int id) {
+		super(id);
 		this.setMaxDamage(0);
 		this.setHasSubtypes(true);
 	}
@@ -11,8 +11,8 @@ public class ItemSnadStone extends ItemBlock {
 		return mod_DumbStorage.snadStone.getBlockTextureFromSideAndMetadata(2, i1);
 	}
 
-	public int getPlacedBlockMetadata(int i1) {
-		return i1;
+	public int getPlacedBlockMetadata(int damage) {
+		return damage;
 	}
 
 	public String getItemNameIS(ItemStack itemStack1) {
