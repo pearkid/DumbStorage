@@ -4,6 +4,8 @@ public class EntityFallingSand2 extends Entity {
 	public int blockID;
 	public int fallTime = 0;
 	public int md = 2;
+	public byte thing = 1;
+	public String texture = "/DumbStorageTextures/MissingTexture.png";
 
 	public EntityFallingSand2(World world1) {
 		super(world1);
@@ -12,7 +14,6 @@ public class EntityFallingSand2 extends Entity {
 	public EntityFallingSand2(World world1, double d2, double d4, double d6, int i8, int i5) {
 		super(world1);
 		this.blockID = i8;
-		this.md = i5;
 		this.preventEntitySpawning = true;
 		this.setSize(0.98F, 0.98F);
 		this.yOffset = this.height / 2.0F;
@@ -23,6 +24,40 @@ public class EntityFallingSand2 extends Entity {
 		this.prevPosX = d2;
 		this.prevPosY = d4;
 		this.prevPosZ = d6;
+		//if (i8 == mod_DumbStorage.snadStoneID) {}
+		if (i5 == 0){
+			thing = 0;
+			texture = "/DumbStorageTextures/SnadStone.png";
+		}
+		if (i5 == 1){
+			thing = 1;
+			texture = "/DumbStorageTextures/twoSnadstone.png";
+		}
+		if (i5 == 2){
+			thing = 2;
+			texture = "/DumbStorageTextures/threeSnadstone.png";
+		}
+		if (i5 == 3){
+			thing = 3;
+			texture = "/DumbStorageTextures/fourSnadstone.png";
+		}
+		if (i5 == 4){
+			thing = 4;
+			texture = "/DumbStorageTextures/oneGarvel.png";
+		}
+		if (i5 == 5){
+			thing = 5;
+			texture = "/DumbStorageTextures/twoGarvel.png";
+		}
+		if (i5 == 6){
+			thing = 6;
+			texture = "/DumbStorageTextures/threeGarvel.png";
+		}
+		if (i5 == 7){
+			thing = 7;
+			texture = "/DumbStorageTextures/fourGarvel.png";
+		}
+
 	}
 
 	protected boolean canTriggerWalking() {
@@ -30,9 +65,11 @@ public class EntityFallingSand2 extends Entity {
 	}
 
 	protected void entityInit() {
-		this.dataWatcher.addObject(31, 0);
+		this.dataWatcher.addObject(31, 2);
 	}
-
+	public String getEntityTexture() {
+		return texture;
+	}
 	public boolean canBeCollidedWith() {
 		return !this.isDead;
 	}
@@ -62,9 +99,9 @@ public class EntityFallingSand2 extends Entity {
 				this.motionZ *= (double)0.7F;
 				this.motionY *= -0.5D;
 				this.setEntityDead();
-				if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, md)) && !this.worldObj.multiplayerWorld) {
+				if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 					//this.dropItem(this.blockID, 1);
-					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, md);
+					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
 				}
 			} else if(this.fallTime > 100 && !this.worldObj.multiplayerWorld) {
 				//this.dropItem(this.blockID, 1);

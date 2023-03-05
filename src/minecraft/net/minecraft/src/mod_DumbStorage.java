@@ -2,7 +2,6 @@ package net.minecraft.src;
 
 public class mod_DumbStorage extends BaseMod {
     public boolean testenabled = true;
-    public boolean loadtextures = false;
     public static int texture0 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
     public static int texture1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
     public static int texture2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/DuoDirts.png");
