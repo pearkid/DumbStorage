@@ -25,6 +25,7 @@ public class EntityFallingSand2 extends Entity {
 		this.prevPosY = d4;
 		this.prevPosZ = d6;
 		thing = (byte) i5;
+		md = i5;
 	}
 
 	protected boolean canTriggerWalking() {
