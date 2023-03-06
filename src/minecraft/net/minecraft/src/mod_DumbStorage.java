@@ -1,6 +1,12 @@
 package net.minecraft.src;
 
+import java.util.Map;
+
 public class mod_DumbStorage extends BaseMod {
+    @Override
+    public void AddRenderer(@SuppressWarnings("rawtypes") Map map) {
+        map.put(EntityFallingSand2.class, new RenderFallingSand2());
+    }
     public boolean testenabled = true;
     public static int texture0 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
     public static int texture1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
@@ -48,6 +54,7 @@ public class mod_DumbStorage extends BaseMod {
     }
     public mod_DumbStorage(){
 
+
         snadStone = (new BlockSnadStone(snadStoneID)).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setBlockName("snadStone");
         dirts = (new BlockDirts(dirtsID)).setHardness(0.5F).setStepSound(Block.soundGravelFootstep).setBlockName("dirts");
         test = (new BlockTest(testID)).setHardness(0.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("test");
@@ -57,6 +64,8 @@ public class mod_DumbStorage extends BaseMod {
         ModLoader.RegisterBlock(test, ItemTest.class);
 
         ModLoader.RegisterEntityID(EntityFallingSand2.class, "fallingsand2",FSid);
+
+
 
         ModLoader.AddLocalization("tile.dirts.name", "Dirts");
         ModLoader.AddLocalization("tile.snadStone.name", "Snadstone");

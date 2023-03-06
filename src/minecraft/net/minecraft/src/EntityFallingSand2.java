@@ -24,40 +24,7 @@ public class EntityFallingSand2 extends Entity {
 		this.prevPosX = d2;
 		this.prevPosY = d4;
 		this.prevPosZ = d6;
-		//if (i8 == mod_DumbStorage.snadStoneID) {}
-		if (i5 == 0){
-			thing = 0;
-			texture = "/DumbStorageTextures/SnadStone.png";
-		}
-		if (i5 == 1){
-			thing = 1;
-			texture = "/DumbStorageTextures/twoSnadstone.png";
-		}
-		if (i5 == 2){
-			thing = 2;
-			texture = "/DumbStorageTextures/threeSnadstone.png";
-		}
-		if (i5 == 3){
-			thing = 3;
-			texture = "/DumbStorageTextures/fourSnadstone.png";
-		}
-		if (i5 == 4){
-			thing = 4;
-			texture = "/DumbStorageTextures/oneGarvel.png";
-		}
-		if (i5 == 5){
-			thing = 5;
-			texture = "/DumbStorageTextures/twoGarvel.png";
-		}
-		if (i5 == 6){
-			thing = 6;
-			texture = "/DumbStorageTextures/threeGarvel.png";
-		}
-		if (i5 == 7){
-			thing = 7;
-			texture = "/DumbStorageTextures/fourGarvel.png";
-		}
-
+		thing = (byte) i5;
 	}
 
 	protected boolean canTriggerWalking() {
@@ -66,9 +33,6 @@ public class EntityFallingSand2 extends Entity {
 
 	protected void entityInit() {
 		this.dataWatcher.addObject(31, 2);
-	}
-	public String getEntityTexture() {
-		return texture;
 	}
 	public boolean canBeCollidedWith() {
 		return !this.isDead;
