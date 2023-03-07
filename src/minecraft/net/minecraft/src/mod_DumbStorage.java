@@ -1,13 +1,14 @@
 package net.minecraft.src;
 
 import java.util.Map;
+import java.util.Random;
 
 public class mod_DumbStorage extends BaseMod {
     @Override
     public void AddRenderer(@SuppressWarnings("rawtypes") Map map) {
         map.put(EntityFallingSand2.class, new RenderFallingSand2());
     }
-    public boolean testenabled = true;
+    public boolean testenabled = false;
     public static int texture0 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
     public static int texture1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
     public static int texture2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/DuoDirts.png");
@@ -126,5 +127,15 @@ public class mod_DumbStorage extends BaseMod {
             ModLoader.AddRecipe(new ItemStack(snadStone, 1, 7), new Object[]{"XX", Character.valueOf('X'), Block.gravel});
         }
     }
+    public void GenerateSurface (World world, Random random, int i, int j) {
+        for (int a = 0; a < 20; a ++) {
+            int posX = i + random.nextInt(16);
+            int posY = random.nextInt(128);
+            int posZ = j + random.nextInt(16);
+            (new WorldGenGarvel(4)).generate(world, random, posX, posY, posZ);
+        }
+    }
+    World world;
+
 
 }
