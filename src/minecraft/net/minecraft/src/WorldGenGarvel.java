@@ -3,8 +3,8 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class WorldGenGarvel extends WorldGenerator {
-	private int garvelBlockId = mod_DumbStorage.snadStone.blockID;
-	private int dirtsBlockId = mod_DumbStorage.dirts.blockID;
+	private int garvelBlockId = DumbSBlocks.snadStone.blockID;
+	private int dirtsBlockId = DumbSBlocks.dirts.blockID;
 	private int numberOfBlocks;
 
 	public WorldGenGarvel(int i1) {

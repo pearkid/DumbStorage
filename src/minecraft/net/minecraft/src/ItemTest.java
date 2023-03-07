@@ -8,7 +8,7 @@ public class ItemTest extends ItemBlock {
 	}
 
 	public int getIconFromDamage(int i1) {
-		return mod_DumbStorage.test.getBlockTextureFromSideAndMetadata(2, i1);
+		return DumbSBlocks.test.getBlockTextureFromSideAndMetadata(2, i1);
 	}
 
 	public int getPlacedBlockMetadata(int i1) {

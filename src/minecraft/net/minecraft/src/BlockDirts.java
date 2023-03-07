@@ -36,7 +36,7 @@ public class BlockDirts extends Block {
 
 
 	public int idDropped(int i1, Random random2) {
-		return mod_DumbStorage.dirts.blockID;
+		return DumbSBlocks.dirts.blockID;
 	}
 
 	protected int damageDropped(int i1) {

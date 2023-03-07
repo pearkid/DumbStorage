@@ -8,7 +8,7 @@ public class ItemSnadStone extends ItemBlock {
 	}
 
 	public int getIconFromDamage(int i1) {
-		return mod_DumbStorage.snadStone.getBlockTextureFromSideAndMetadata(2, i1);
+		return DumbSBlocks.snadStone.getBlockTextureFromSideAndMetadata(2, i1);
 	}
 
 	public int getPlacedBlockMetadata(int damage) {

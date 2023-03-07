@@ -8,7 +8,7 @@ public class ItemDirts extends ItemBlock {
 	}
 
 	public int getIconFromDamage(int i1) {
-		return mod_DumbStorage.dirts.getBlockTextureFromSideAndMetadata(2, i1);
+		return DumbSBlocks.dirts.getBlockTextureFromSideAndMetadata(2, i1);
 	}
 
 	public int getPlacedBlockMetadata(int i1) {

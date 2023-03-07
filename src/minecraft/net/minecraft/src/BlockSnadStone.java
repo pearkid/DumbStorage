@@ -45,7 +45,7 @@ public class BlockSnadStone<metadata> extends Block {
         return this.getBlockTextureFromSideAndMetadata(i1, 0);
     }
     public int idDropped(int i1, Random random2) {
-        return mod_DumbStorage.snadStone.blockID;
+        return DumbSBlocks.snadStone.blockID;
     }
     protected int damageDropped(int damage) {
         return damage;

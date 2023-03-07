@@ -31,7 +31,7 @@ public class BlockTest extends Block {
 
 
 	public int idDropped(int i1, Random random2) {
-		return mod_DumbStorage.test.blockID;
+		return DumbSBlocks.test.blockID;
 	}
 
 	protected int damageDropped(int i1) {
