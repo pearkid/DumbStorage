@@ -59,17 +59,18 @@ public class mod_DumbStorage extends BaseMod {
 
     }
     public void GenerateSurface (World world, Random random, int i, int j) {
+        int [] arr = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3};
         for (int a = 0; a < 40; a ++) {
             int posX = i + random.nextInt(16);
             int posY = random.nextInt(128);
             int posZ = j + random.nextInt(16);
             (new WorldGenGarvel(4)).generate(world, random, posX, posY, posZ);
         }
-        for(int a = 0; a < 2; ++a) {
+        for(int a = 0; a < 3; ++a) {
             int posX = i + random.nextInt(16);
             int posY = 64 + random.nextInt(58);
             int posZ = j + random.nextInt(16);
-            (new DumbSGenTest(Block.cobblestoneMossy.blockID, Block.cobblestone.blockID, Block.cloth.blockID, Block.glowStone.blockID, Block.glowStone.blockID, 2, Block.bookShelf.blockID, 0, 10, true)).generate(world, random, posX, posY, posZ);
+            (new DumbSGenTest(Block.blockClay.blockID, Block.stone.blockID, Block.cloth.blockID, Block.glowStone.blockID, Block.glowStone.blockID, 2, Block.bookShelf.blockID, 0, arr[random.nextInt(arr.length)], true)).generate(world, random, posX, posY, posZ);
         }
 
     }

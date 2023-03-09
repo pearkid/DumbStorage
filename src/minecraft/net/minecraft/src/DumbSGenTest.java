@@ -11,7 +11,7 @@ public class DumbSGenTest extends DumbSGenStructures {
     private int wallBlockID2;
     private int corridorBlockID1;
     private int corridorBlockID2;
-    private int numRooms;
+    private int size;
     private int n;
     private boolean finished;
     private boolean flat;
@@ -25,7 +25,7 @@ public class DumbSGenTest extends DumbSGenStructures {
         this.corridorMeta1 = m1;
         this.corridorBlockID2 = o;
         this.corridorMeta2 = o1;
-        this.numRooms = p;
+        this.size = p;
         this.flat = flag;
         this.finished = false;
     }
@@ -35,27 +35,27 @@ public class DumbSGenTest extends DumbSGenStructures {
         this.replaceSolid = true;
         this.n = 0;
 
-        if (world.isAirBlock(i, j, k) && ((BlockDeadBush) Block.blocksList[32]).canBlockStay(world, i, j, k) && !world.isAirBlock(i + 5, j, k + 8)) {
+        if (world.isAirBlock(i, j, k) && ((BlockDeadBush) Block.blocksList[32]).canBlockStay(world, i, j, k) && !world.isAirBlock(i + 5 * (size), j, k + 8 * (size))) {
             this.setBlocks(this.lockedBlockID1, this.lockedBlockID2, 20);
-            this.addSolidBox(world, random, i + 1, j, k, 4, 1, 5);
-            this.addSolidBox(world, random, i + 1, j + 1, k, 5, 1, 5);
-            this.addSolidBox(world, random, i + 2, j + 2, k, 4, 2, 5);
-            this.addSolidBox(world, random, i + 3, j + 4, k, 4, 2, 5);
-            this.addSolidBox(world, random, i + 3, j + 6, k, 5, 2, 5);
-            this.addSolidBox(world, random, i, j, k + 1, 1, 1, 3);
-            this.addSolidBox(world, random, i + 2, j + 7, k + 1, 1, 1, 3);
-            this.addSolidBox(world, random, i + 3, j + 8, k + 1, 5, 1, 3);
-            this.addSolidBox(world, random, i + 4, j + 8, k, 3, 1, 5);
-            this.addSolidBox(world, random, i + 5, j, k + 1, 1, 1, 3);
-            this.addSolidBox(world, random, i + 6, j + 1, k + 1, 1, 3, 3);
-            this.addSolidBox(world, random, i + 7, j + 4, k + 1, 1, 2, 3);
-            world.setBlockAndMetadata(i + 1, j + 2, k, this.lockedBlockID1, 1);
-            world.setBlockAndMetadata(i, j + 3, k + 2, this.lockedBlockID1, 1);
-            world.setBlockAndMetadata(i + 1, j + 2, k + 4, this.lockedBlockID1, 1);
-            this.addSolidBox(world, random, i + 1, j + 3, k + 1, 1, 1, 3);
-            this.addSolidBox(world, random, i + 1, j + 4, k + 2, 2, 2, 1);
-            this.addSolidBox(world, random, i + 2, j + 4, k, 1, 1, 5);
-            this.addSolidBox(world, random, i + 2, j + 6, k, 1, 1, 5);
+            this.addSolidBox(world, random, i + 1 * (size), j, k, 4 * (size), 1 * (size), 5 * (size));
+            this.addSolidBox(world, random, i + 1 * (size), j + 1 * (size), k, 5 * (size), 1 * (size), 5 * (size));
+            this.addSolidBox(world, random, i + 2 * (size), j + 2 * (size), k, 4 * (size), 2 * (size), 5 * (size));
+            this.addSolidBox(world, random, i + 3 * (size), j + 4 * (size), k, 4 * (size), 2 * (size), 5 * (size));
+            this.addSolidBox(world, random, i + 3 * (size), j + 6 * (size), k, 5 * (size), 2 * (size), 5 * (size));
+            this.addSolidBox(world, random, i, j, k + 1 * (size), 1 * (size), 1 * (size), 3 * (size));
+            this.addSolidBox(world, random, i + 2 * (size), j + 7 * (size), k + 1 * (size), 1 * (size), 1 * (size), 3 * (size));
+            this.addSolidBox(world, random, i + 3 * (size), j + 8 * (size), k + 1 * (size), 5 * (size), 1 * (size), 3 * (size));
+            this.addSolidBox(world, random, i + 4 * (size), j + 8 * (size), k, 3 * (size), 1 * (size), 5 * (size));
+            this.addSolidBox(world, random, i + 5 * (size), j, k + 1 * (size), 1 * (size), 1 * (size), 3 * (size));
+            this.addSolidBox(world, random, i + 6 * (size), j + 1 * (size), k + 1 * (size), 1 * (size), 3 * (size), 3 * (size));
+            this.addSolidBox(world, random, i + 7 * (size), j + 4 * (size), k + 1 * (size), 1 * (size), 2 * (size), 3 * (size));
+            this.addSolidBox(world, random,i + 1 * (size), j + 2 * (size), k, 1 * (size), 1 * (size), 1 * (size));
+            this.addSolidBox(world, random,i, j + 3 * (size), k + 2 * (size), 1 * (size), 1 * (size), 1 * (size));
+            this.addSolidBox(world, random,i + 1 * (size), j + 2 * (size), k + 4 * (size), 1 * (size), 1 * (size), 1 * (size));
+            this.addSolidBox(world, random, i + 1 * (size), j + 3 * (size), k + 1 * (size), 1 * (size), 1 * (size), 3 * (size));
+            this.addSolidBox(world, random, i + 1 * (size), j + 4 * (size), k + 2 * (size), 2 * (size), 2 * (size), 1 * (size));
+            this.addSolidBox(world, random, i + 2 * (size), j + 4 * (size), k, 1 * (size), 1 * (size), 5 * (size));
+            this.addSolidBox(world, random, i + 2 * (size), j + 6 * (size), k, 1 * (size), 1 * (size), 5 * (size));
 
         }
         return true;
