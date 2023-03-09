@@ -168,6 +168,23 @@ public class DumbSGenStructures extends WorldGenerator {
 
     }
 
+    public void addSolidBoxnegx(World world, Random random, int i, int j, int k, int di, int dj, int dk) {
+        for(int x = i; x > i + di; --x) {
+            for(int y = j; y < j + dj; ++y) {
+                for(int z = k; z < k + dk; ++z) {
+                    if((this.replaceAir || world.getBlockId(x, y, z) != 0) && (this.replaceSolid || world.getBlockId(x, y, z) == 0)) {
+                        if(random.nextInt(this.chance) == 0) {
+                            world.setBlockAndMetadata(x, y, z, this.blockID2, this.meta2);
+                        } else {
+                            world.setBlockAndMetadata(x, y, z, this.blockID1, this.meta1);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
     public boolean isBoxSolid(World world, int i, int j, int k, int di, int dj, int dk) {
         boolean flag = true;
 
