@@ -3,7 +3,7 @@ package net.minecraft.src;
 import java.util.Random;
 
 public class BlockTest extends Block {
-	public static final String[] testnames = new String[]{"one", "two", "three", "four"};
+	public static final String[] testnames = new String[]{"one", "two", "three", "four", "x"};
 
 	public BlockTest(int i1) {
 		super(i1, 14, Material.ground);
@@ -20,6 +20,9 @@ public class BlockTest extends Block {
 		}
 		if (i2 == 2) {
 			return this.blockIndexInTexture = mod_DumbStorage.texture0;
+		}
+		if (i2 == 4) {
+			return 181;
 		}
 		return this.blockIndexInTexture;
 

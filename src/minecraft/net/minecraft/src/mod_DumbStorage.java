@@ -65,6 +65,12 @@ public class mod_DumbStorage extends BaseMod {
             int posZ = j + random.nextInt(16);
             (new WorldGenGarvel(4)).generate(world, random, posX, posY, posZ);
         }
+        for(int a = 0; a < 2; ++a) {
+            int posX = i + random.nextInt(16);
+            int posY = 64 + random.nextInt(58);
+            int posZ = j + random.nextInt(16);
+            (new DumbSGenTest(Block.cobblestoneMossy.blockID, Block.cobblestone.blockID, Block.cloth.blockID, Block.glowStone.blockID, Block.glowStone.blockID, 2, Block.bookShelf.blockID, 0, 10, true)).generate(world, random, posX, posY, posZ);
+        }
 
     }
     World world;
