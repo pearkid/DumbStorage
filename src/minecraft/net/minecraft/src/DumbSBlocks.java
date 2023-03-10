@@ -8,16 +8,19 @@ public class DumbSBlocks {
     public static Block snadStone;
     public static Block dirts;
     public static Block stones;
+    public static Block magnet;
 
 
     public DumbSBlocks() {
         snadStone = (new BlockSnadStone(mod_DumbStorage.snadStoneID)).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setBlockName("snadStone");
         dirts = (new BlockDirts(mod_DumbStorage.dirtsID)).setHardness(0.5F).setStepSound(Block.soundGravelFootstep).setBlockName("dirts");
         stones = (new BlockStones(mod_DumbStorage.stonesID)).setHardness(0.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("stones");
+        magnet = (new BlockMagnet(mod_DumbStorage.magnetID)).setHardness(1.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setBlockName("magnet");
 
         ModLoader.RegisterBlock(snadStone, ItemSnadStone.class);
         ModLoader.RegisterBlock(dirts, ItemDirts.class);
         ModLoader.RegisterBlock(stones, ItemStones.class);
+        ModLoader.RegisterBlock(magnet, ItemMagnet.class);
 
         ModLoader.AddLocalization("tile.dirts.name", "Dirts");
         ModLoader.AddLocalization("tile.snadStone.name", "Snadstone");
@@ -42,6 +45,10 @@ public class DumbSBlocks {
         ModLoader.AddLocalization("tile.snadStone.gtwo.name", "Garvels");
         ModLoader.AddLocalization("tile.snadStone.gthree.name", "Nonuple Garvels");
         ModLoader.AddLocalization("tile.snadStone.gfour.name", "Unoctogintuple Garvels");
+        ModLoader.AddLocalization("tile.magnet.base.name", "Universal Magnet");
+        ModLoader.AddLocalization("tile.magnet.X.name", "East/West Magnet");
+        ModLoader.AddLocalization("tile.magnet.Y.name", "Up/Down Magnet");
+        ModLoader.AddLocalization("tile.magnet.Z.name", "North/South Magnet");
 
         ModLoader.AddRecipe(new ItemStack(Block.lockedChest, 4), new Object[]{"X", Character.valueOf('X'), Block.chest});
         ModLoader.AddRecipe(new ItemStack(snadStone, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Block.sand});

@@ -30,6 +30,12 @@ public class mod_DumbStorage extends BaseMod {
     public static int claytex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/clay2.png");
     public static int claytex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/clay3.png");
     public static int claytex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/clay4.png");
+    public static int magtex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag1.png");
+    public static int magtex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag2.png");
+    public static int magtex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag3.png");
+    public static int magtex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag4.png");
+    public static int magtex5 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag5.png");
+    public static int magtex6 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag6.png");
 
     /*public static int texture0 = 0;
     public static int texture1 = 1;
@@ -51,13 +57,14 @@ public class mod_DumbStorage extends BaseMod {
     public static int dirtsID = 254;
     @MLProp
     public static int stonesID = 253;
-
+    @MLProp
+    public static int magnetID = 252;
     @MLProp
     public static int FSid = 50;
 
 
     public String Version () {
-        return "DumbStorage 0.2.1";
+        return "DumbStorage 0.2.2";
     }
     public mod_DumbStorage(){
 

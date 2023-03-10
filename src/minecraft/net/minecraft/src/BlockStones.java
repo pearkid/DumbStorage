@@ -12,7 +12,19 @@ public class BlockStones extends Block {
 
 
 	public int getBlockTextureFromSideAndMetadata(int i1, int i2) {
-		if(i2 == 4) {
+		if (i2 == 0) {
+			return 181;
+		}
+		if (i2 == 1) {
+			return this.blockIndexInTexture = mod_DumbStorage.nulltex;
+		}
+		if (i2 == 2) {
+			return this.blockIndexInTexture = mod_DumbStorage.nulltex;
+		}
+		if (i2 == 3) {
+			return this.blockIndexInTexture = mod_DumbStorage.nulltex;
+		}
+		if (i2 == 4) {
 			return this.blockIndexInTexture = mod_DumbStorage.stonetex1;
 		}
 		if (i2 == 5) {
@@ -23,9 +35,6 @@ public class BlockStones extends Block {
 		}
 		if (i2 == 7) {
 			return this.blockIndexInTexture = mod_DumbStorage.stonetex4;
-		}
-		if (i2 == 0) {
-			return 181;
 		}
 		return this.blockIndexInTexture;
 
