@@ -9,19 +9,27 @@ public class mod_DumbStorage extends BaseMod {
         map.put(EntityFallingSand2.class, new RenderFallingSand2());
     }
 
-    public static int texture0 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
-    public static int texture1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
-    public static int texture2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/DuoDirts.png");
-    public static int texture3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/SnadStone.png");
-    public static int texture4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/trioDirts.png");
-    public static int texture5 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/quadDirts.png");
-    public static int texture6 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/twoSnadstone.png");
-    public static int texture7 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/threeSnadstone.png");
-    public static int texture8 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/fourSnadstone.png");
-    public static int texture9 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/oneGarvel.png");
-    public static int texture10 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/twoGarvel.png");
-    public static int texture11 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/threeGarvel.png");
-    public static int texture12 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/fourGarvel.png");
+    public static int nulltex = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
+    public static int dirttex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
+    public static int dirttex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/DuoDirts.png");
+    public static int snadtex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/SnadStone.png");
+    public static int dirttex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/trioDirts.png");
+    public static int dirttex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/quadDirts.png");
+    public static int snadtex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/twoSnadstone.png");
+    public static int snadtex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/threeSnadstone.png");
+    public static int snadtex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/fourSnadstone.png");
+    public static int garvtex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/oneGarvel.png");
+    public static int garvtex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/twoGarvel.png");
+    public static int garvtex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/threeGarvel.png");
+    public static int garvtex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/fourGarvel.png");
+    public static int stonetex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/stone1.png");
+    public static int stonetex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/stone2.png");
+    public static int stonetex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/stone3.png");
+    public static int stonetex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/stone4.png");
+    public static int claytex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/clay1.png");
+    public static int claytex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/clay2.png");
+    public static int claytex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/clay3.png");
+    public static int claytex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/clay4.png");
 
     /*public static int texture0 = 0;
     public static int texture1 = 1;
@@ -42,7 +50,7 @@ public class mod_DumbStorage extends BaseMod {
     @MLProp
     public static int dirtsID = 254;
     @MLProp
-    public static int testID = 253;
+    public static int stonesID = 253;
 
     @MLProp
     public static int FSid = 50;

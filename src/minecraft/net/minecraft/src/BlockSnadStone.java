@@ -14,28 +14,28 @@ public class BlockSnadStone<metadata> extends Block {
 
     public int getBlockTextureFromSideAndMetadata(int i1, int i2) {
         if(i2 == 0) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture3;
+            return this.blockIndexInTexture = mod_DumbStorage.snadtex1;
         }
         if (i2 == 1) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture6;
+            return this.blockIndexInTexture = mod_DumbStorage.snadtex2;
         }
         if (i2 == 2) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture7;
+            return this.blockIndexInTexture = mod_DumbStorage.snadtex3;
         }
         if (i2 == 3) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture8;
+            return this.blockIndexInTexture = mod_DumbStorage.snadtex4;
         }
         if (i2 == 4) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture9;
+            return this.blockIndexInTexture = mod_DumbStorage.garvtex1;
         }
         if (i2 == 5) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture10;
+            return this.blockIndexInTexture = mod_DumbStorage.garvtex2;
         }
         if (i2 == 6) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture11;
+            return this.blockIndexInTexture = mod_DumbStorage.garvtex3;
         }
         if (i2 == 7) {
-            return this.blockIndexInTexture = mod_DumbStorage.texture12;
+            return this.blockIndexInTexture = mod_DumbStorage.garvtex4;
         }
         return this.blockIndexInTexture;
 

@@ -1,14 +1,14 @@
 package net.minecraft.src;
 
-public class ItemTest extends ItemBlock {
-	public ItemTest(int i1) {
+public class ItemStones extends ItemBlock {
+	public ItemStones(int i1) {
 		super(i1);
 		this.setMaxDamage(0);
 		this.setHasSubtypes(true);
 	}
 
 	public int getIconFromDamage(int i1) {
-		return DumbSBlocks.test.getBlockTextureFromSideAndMetadata(2, i1);
+		return DumbSBlocks.stones.getBlockTextureFromSideAndMetadata(2, i1);
 	}
 
 	public int getPlacedBlockMetadata(int i1) {
@@ -16,6 +16,6 @@ public class ItemTest extends ItemBlock {
 	}
 
 	public String getItemNameIS(ItemStack itemStack1) {
-		return super.getItemName() + "." + BlockTest.testnames[itemStack1.getItemDamage()];
+		return super.getItemName() + "." + BlockStones.stonesnames[itemStack1.getItemDamage()];
 	}
 }
