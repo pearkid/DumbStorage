@@ -4,24 +4,24 @@ import java.util.Random;
 
 import static java.lang.Math.abs;
 
-public class DumbSGenTest extends DumbSGenStructures {
-    private int corridorMeta1;
-    private int corridorMeta2;
-    private int lockedBlockID1;
-    private int lockedBlockID2;
-    private int wallBlockID1;
-    private int wallBlockID2;
-    private int corridorBlockID1;
-    private int corridorBlockID2;
+public class DumbSGenMoai extends DumbSGenStructures {
+    private int BlockID1;
+    private int BlockID2;
+    private int meta1;
+    private int meta2;
+    private int meta3;
+    private int meta4;
     private int size;
     private int size2;
     private int n;
     private boolean finished;
     private boolean flat;
 
-    public DumbSGenTest(int i, int j, int p, boolean flag) {
-        this.lockedBlockID1 = i;
-        this.lockedBlockID2 = j;
+    public DumbSGenMoai(int i, int j, int k, int l, int p, boolean flag) {
+        this.BlockID1 = i;
+        this.BlockID2 = j;
+        this.meta1 = k;
+        this.meta2 = l;
         this.size = p;
         this.size2 = abs(p);
         this.flat = flag;
@@ -34,9 +34,10 @@ public class DumbSGenTest extends DumbSGenStructures {
         this.n = 0;
 
 
-        if (size == 1 || size == 2 || size == 3) {
+        if (size == 1 || size == 2 || size == 3 || size == 4) {
             if (world.isAirBlock(i, j, k) && ((BlockDeadBush) Block.blocksList[32]).canBlockStay(world, i, j, k) && !world.isAirBlock(i + 5 * (size2), j, k + 8 * (size2))) {
-                this.setBlocks(this.lockedBlockID1, this.lockedBlockID2, 20);
+                this.setBlocks(this.BlockID1, this.BlockID2, 20);
+                this.setMetadata(this.meta1, this.meta2);
                 this.addSolidBox(world, random, i + 1 * (size2), j, k, 4 * (size2), 1 * (size2), 5 * (size2));
                 this.addSolidBox(world, random, i + 1 * (size2), j + 1 * (size2), k, 5 * (size2), 1 * (size2), 5 * (size2));
                 this.addSolidBox(world, random, i + 2 * (size2), j + 2 * (size2), k, 4 * (size2), 2 * (size2), 5 * (size2));
@@ -59,9 +60,10 @@ public class DumbSGenTest extends DumbSGenStructures {
                 }
 
             }
-        if (size == -1 || size == -2 || size == -3) {
+        if (size == -1 || size == -2 || size == -3 || size == -4) {
             if (world.isAirBlock(i, j, k) && ((BlockDeadBush) Block.blocksList[32]).canBlockStay(world, i, j, k) && !world.isAirBlock(i - 5 * (size2), j, k - 8 * (size2))) {
-                this.setBlocks(this.lockedBlockID1, this.lockedBlockID2, 20);
+                this.setBlocks(this.BlockID1, this.BlockID2, 20);
+                this.setMetadata(this.meta1, this.meta2);
                 this.addSolidBoxnegx(world, random, i - 1 * (size2), j, k, -4 * (size2), 1 * (size2), 5 * (size2));
                 this.addSolidBoxnegx(world, random, i - 1 * (size2), j + 1 * (size2), k, -5 * (size2), 1 * (size2), 5 * (size2));
                 this.addSolidBoxnegx(world, random, i - 2 * (size2), j + 2 * (size2), k, -4 * (size2), 2 * (size2), 5 * (size2));

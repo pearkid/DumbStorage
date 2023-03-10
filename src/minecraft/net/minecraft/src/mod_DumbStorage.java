@@ -68,6 +68,10 @@ public class mod_DumbStorage extends BaseMod {
     }
     public void GenerateSurface (World world, Random random, int i, int j) {
         int [] arr = {1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 2, -2, 3, -4};
+        int [] meta1 = {4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7};
+        int [] meta2 = {4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7};
+        int [] BlockID1 = {Block.blockClay.blockID, Block.blockClay.blockID, Block.stone.blockID, dirtsID, dirtsID, stonesID, stonesID};
+        int [] BlockID2 = {Block.stone.blockID, Block.stone.blockID, Block.stone.blockID, stonesID, stonesID, dirtsID, Block.blockClay.blockID};
         for (int a = 0; a < 40; a ++) {
             int posX = i + random.nextInt(16);
             int posY = random.nextInt(128);
@@ -78,7 +82,7 @@ public class mod_DumbStorage extends BaseMod {
             int posX = i + random.nextInt(16);
             int posY = 64 + random.nextInt(58);
             int posZ = j + random.nextInt(16);
-            (new DumbSGenTest(Block.blockClay.blockID, Block.stone.blockID, arr[random.nextInt(arr.length)], true)).generate(world, random, posX, posY, posZ);
+            (new DumbSGenMoai(BlockID1[random.nextInt(BlockID1.length)], BlockID2[random.nextInt(BlockID2.length)], meta1[random.nextInt(meta1.length)], meta2[random.nextInt(meta2.length)], arr[random.nextInt(arr.length)], true)).generate(world, random, posX, posY, posZ);
         }
 
     }

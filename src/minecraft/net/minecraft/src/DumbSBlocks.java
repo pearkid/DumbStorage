@@ -21,10 +21,10 @@ public class DumbSBlocks {
 
         ModLoader.AddLocalization("tile.dirts.name", "Dirts");
         ModLoader.AddLocalization("tile.snadStone.name", "Snadstone");
-        ModLoader.AddLocalization("tile.stones.one.name", "Stones");
-        ModLoader.AddLocalization("tile.stones.two.name", "Nonuple Stones");
-        ModLoader.AddLocalization("tile.stones.three.name", "Unoctogintuple Stones");
-        ModLoader.AddLocalization("tile.stones.four.name", "Nonaduoviginseptingentuple Stones");
+        ModLoader.AddLocalization("tile.stones.sone.name", "Stones");
+        ModLoader.AddLocalization("tile.stones.stwo.name", "Nonuple Stones");
+        ModLoader.AddLocalization("tile.stones.sthree.name", "Unoctogintuple Stones");
+        ModLoader.AddLocalization("tile.stones.sfour.name", "Nonaduoviginseptingentuple Stones");
         ModLoader.AddLocalization("tile.stones.x.name", "X-Ray Block");
         ModLoader.AddLocalization("tile.dirts.clay1.name", "Clays");
         ModLoader.AddLocalization("tile.dirts.clay2.name", "Nonuple Clays");
