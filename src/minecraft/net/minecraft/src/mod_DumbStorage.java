@@ -91,7 +91,12 @@ public class mod_DumbStorage extends BaseMod {
             int posZ = j + random.nextInt(16);
             (new DumbSGenMoai(BlockID1[random.nextInt(BlockID1.length)], BlockID2[random.nextInt(BlockID2.length)], meta1[random.nextInt(meta1.length)], meta2[random.nextInt(meta2.length)], arr[random.nextInt(arr.length)], true)).generate(world, random, posX, posY, posZ);
         }
-
+        for(int a = 0; a < 4; ++a) {
+            int posX = i + random.nextInt(16);
+            int posY = 64 + random.nextInt(64);
+            int posZ = j + random.nextInt(16);
+            (new DumbSGenSecretDoor(Block.redstoneWire.blockID, Block.redstoneWire.blockID, true)).generate(world, random, posX, posY, posZ);
+        }
     }
     World world;
 
