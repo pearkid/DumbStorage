@@ -67,7 +67,7 @@ public class BlockSnadStone<metadata> extends Block {
         if(canFallBelow(world1, i2, i3 - 1, i4) && i3 >= 0) {
             byte b8 = 32;
             if(!fallInstantly && world1.checkChunksExist(i2 - b8, i3 - b8, i4 - b8, i2 + b8, i3 + b8, i4 + b8)) {
-                EntityFallingSand2 entityFallingSand9 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage);
+                EntityFallingSand2 entityFallingSand9 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, (byte) 0);
                 world1.entityJoinedWorld(entityFallingSand9);
             } else {
                 world1.setBlockAndMetadataWithNotify(i2, i3, i4, 0, 0);

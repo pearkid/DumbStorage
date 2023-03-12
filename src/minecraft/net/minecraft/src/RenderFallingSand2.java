@@ -58,6 +58,7 @@ public class RenderFallingSand2 extends Render {
 		GL11.glPopMatrix();
 	}
 
+
 	public void doRender(Entity entity1, double d2, double d4, double d6, float f8, float f9) {
 		this.doRenderFallingSand2((EntityFallingSand2)entity1, d2, d4, d6, f8, f9);
 	}

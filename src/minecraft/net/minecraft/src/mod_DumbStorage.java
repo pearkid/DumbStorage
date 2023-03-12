@@ -6,7 +6,7 @@ import java.util.Random;
 public class mod_DumbStorage extends BaseMod {
     @Override
     public void AddRenderer(@SuppressWarnings("rawtypes") Map map) {
-        map.put(EntityFallingSand2.class, new RenderFallingSand2());
+        map.put(EntityFallingSand2.class, new RenderMovingBlock());
     }
 
     public static int nulltex = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");

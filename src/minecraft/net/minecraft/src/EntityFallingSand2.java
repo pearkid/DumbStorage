@@ -1,17 +1,20 @@
 package net.minecraft.src;
 
+import java.util.List;
+
 public class EntityFallingSand2 extends Entity {
 	public int blockID;
 	public int fallTime = 0;
 	public int md = 2;
 	public byte thing = 1;
+	public byte direction;
 	public String texture = "/DumbStorageTextures/MissingTexture.png";
 
 	public EntityFallingSand2(World world1) {
 		super(world1);
 	}
 
-	public EntityFallingSand2(World world1, double d2, double d4, double d6, int i8, int i5) {
+	public EntityFallingSand2(World world1, double d2, double d4, double d6, int i8, int i5, byte dir) {
 		super(world1);
 		this.blockID = i8;
 		this.preventEntitySpawning = true;
@@ -26,6 +29,7 @@ public class EntityFallingSand2 extends Entity {
 		this.prevPosZ = d6;
 		thing = (byte) i5;
 		md = i5;
+		direction = dir;
 	}
 
 	protected boolean canTriggerWalking() {
@@ -47,7 +51,21 @@ public class EntityFallingSand2 extends Entity {
 			this.prevPosY = this.posY;
 			this.prevPosZ = this.posZ;
 			++this.fallTime;
-			this.motionY -= (double)0.04F;
+			switch(direction) {
+				case 0: this.motionY -= (double)0.04F;
+				break;
+				case 1: this.motionY += (double)0.04F;
+					break;
+				case 2: this.motionX -= (double)0.04F;
+					break;
+				case 3: this.motionX += (double)0.04F;
+					break;
+				case 4: this.motionZ -= (double)0.04F;
+					break;
+				case 5: this.motionZ += (double)0.04F;
+					break;
+			}
+
 			this.moveEntity(this.motionX, this.motionY, this.motionZ);
 			this.motionX *= (double)0.98F;
 			this.motionY *= (double)0.98F;
@@ -59,11 +77,65 @@ public class EntityFallingSand2 extends Entity {
 				this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, 0, 0);
 			}
 
+
+			if(this.isCollided) {
+				this.motionX *= (double)0.7F;
+				this.motionZ *= (double)0.7F;
+				this.motionY *= -0.5D;
+				if((this.worldObj.getBlockId(i1 + 1, i2, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1 + 1, i2, i3) == mod_DumbStorage.magnetID) || (this.worldObj.getBlockId(i1 - 1, i2, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1 - 1, i2, i3) == mod_DumbStorage.magnetID) || (this.worldObj.getBlockId(i1, i2 + 1, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2 + 1, i3) == mod_DumbStorage.magnetID)|| (this.worldObj.getBlockId(i1, i2 - 1, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2 - 1, i3) == mod_DumbStorage.magnetID)|| (this.worldObj.getBlockId(i1, i2, i3 + 1) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2, i3 + 1) == mod_DumbStorage.magnetID) || (this.worldObj.getBlockId(i1, i2, i3 - 1) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2, i3 - 1) == mod_DumbStorage.magnetID)) {
+					if (this.blockID == mod_DumbStorage.magnetID) {
+						this.setEntityDead();
+					}
+					if(direction == 0) {
+						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
+							//this.dropItem(this.blockID, 1);
+							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+						}
+					}
+					if(direction == 1) {
+						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2 + 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
+							//this.dropItem(this.blockID, 1);
+							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+						}
+					}
+					if(direction == 2) {
+						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1 - 1, i2, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
+							//this.dropItem(this.blockID, 1);
+							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+						}
+					}
+					if(direction == 3) {
+						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1 + 1, i2, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
+							//this.dropItem(this.blockID, 1);
+							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+						}
+					}
+					if(direction == 4) {
+						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2, i3 - 1) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
+							//this.dropItem(this.blockID, 1);
+							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+						}
+					}
+					if(direction == 5) {
+						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2, i3 + 1) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
+							//this.dropItem(this.blockID, 1);
+							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+						}
+					}
+				}
+
+			} else if(this.fallTime > 100 && !this.worldObj.multiplayerWorld) {
+				//this.dropItem(this.blockID, 1);
+				this.setEntityDead();
+				this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+			}
 			if(this.onGround) {
 				this.motionX *= (double)0.7F;
 				this.motionZ *= (double)0.7F;
 				this.motionY *= -0.5D;
-				this.setEntityDead();
+				if (this.blockID != mod_DumbStorage.magnetID) {
+					this.setEntityDead();
+				}
 				if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 					//this.dropItem(this.blockID, 1);
 					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
