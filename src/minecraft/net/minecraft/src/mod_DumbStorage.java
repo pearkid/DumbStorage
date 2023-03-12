@@ -75,7 +75,7 @@ public class mod_DumbStorage extends BaseMod {
     }
     public void GenerateSurface (World world, Random random, int i, int j) {
         int [] arr = {1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 1, 1, 1, -1, 2, -2, 3, -4};
-        int [] meta1 = {4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7};
+        int [] meta1 = {4, 4, 5};
         int [] meta2 = {4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7};
         int [] BlockID1 = {Block.blockClay.blockID, Block.blockClay.blockID, Block.stone.blockID, dirtsID, dirtsID, stonesID, stonesID};
         int [] BlockID2 = {Block.stone.blockID, Block.stone.blockID, Block.stone.blockID, stonesID, stonesID, dirtsID, Block.blockClay.blockID};
