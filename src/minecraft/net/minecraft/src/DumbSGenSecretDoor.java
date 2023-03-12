@@ -36,15 +36,16 @@ public class DumbSGenSecretDoor extends DumbSGenStructures {
         if (world.isAirBlock(i, j, k) && ((BlockDeadBush) Block.blocksList[32]).canBlockStay(world, i, j, k) && !world.isAirBlock(i + 8, j - 1, k - 8) || world.isAirBlock(i, j, k) && ((BlockTallGrass) Block.blocksList[31]).canBlockStay(world, i, j, k) && !world.isAirBlock(i + 8, j - 1, k - 8)) {
             if (world.isAirBlock(i, j, k) && ((BlockDeadBush) Block.blocksList[32]).canBlockStay(world, i, j, k) && !world.isAirBlock(i + 8, j - 1, k - 8)) {
                 this.setBlocks(Block.sand.blockID, Block.grass.blockID, 10);
+                world.setBlockAndMetadata(i, j - 1, k, Block.sand.blockID, 3);
             } else {
                 this.setBlocks(Block.grass.blockID, Block.gravel.blockID, 10);
+                world.setBlockAndMetadata(i, j - 1, k, Block.grass.blockID, 3);
             }
 
             this.addSolidBox(world, random, i - 4, j - 4, k - 6, 15, 4, 10);
             this.setBlocks(this.BlockID1, this.BlockID2, 20);
             this.setMetadata(this.meta1, this.meta2);
             world.setBlockAndMetadata(i, j, k, Block.lever.blockID, 5);
-            world.setBlockAndMetadata(i, j - 1, k, Block.sand.blockID, 3);
             world.setBlockAndMetadata(i, j - 2, k, Block.redstoneWire.blockID, 0);
             world.setBlockAndMetadata(i + 1, j - 2, k, Block.glass.blockID, 0);
             world.setBlockAndMetadata(i - 1, j - 2, k, Block.cloth.blockID, 0);
@@ -107,7 +108,7 @@ public class DumbSGenSecretDoor extends DumbSGenStructures {
             world.setBlockAndMetadataWithNotify(i - 2, j - 2, k, Block.torchRedstoneActive.blockID, 2);
             if (trap == true) {
                 this.setBlocks(0,0,0);
-                this.addSolidBox(world, random, i + 3, j - 64, k - 2, 2, 60, 2);
+                this.addSolidBox(world, random, i + 3, j - 64, k - 2, 2, 61, 2);
             }
             if (trap == false) {
                 this.setBlocks(Block.planks.blockID, Block.bookShelf.blockID, 10);
