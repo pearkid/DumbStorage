@@ -73,7 +73,7 @@ public class BlockMagnet extends Block {
 
 	}
 	private void tryToSlide(World world1, int i2, int i3, int i4, int damage, byte direction) {
-		if(canFallBelow(world1, i2, i3 - 1, i4) && i3 >= 0 && direction != 1) {
+		if(canFallBelow(world1, i2, i3 - 1, i4) && i3 >= 0 && direction == 0) {
 			byte b8 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - b8, i3 - b8, i4 - b8, i2 + b8, i3 + b8, i4 + b8)) {
 				EntityFallingSand2 entityFallingSand9 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
@@ -90,7 +90,7 @@ public class BlockMagnet extends Block {
 				}
 			}
 		}
-		if(canFallAbove(world1, i2, i3 + 1, i4) && i3 < 128 && direction == 0) {
+		if(canFallAbove(world1, i2, i3 + 1, i4) && i3 < 128 && direction == 1) {
 			byte byte0 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - byte0, i3 - byte0, i4 - byte0, i2 + byte0, i3 + byte0, i4 + byte0)) {
 				EntityFallingSand2 floating = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
