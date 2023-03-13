@@ -40,49 +40,106 @@ public class BlockMagnet extends Block {
 
 	public void updateTick(World world1, int i2, int i3, int i4, Random random5) {
 		dmg = world1.getBlockMetadata(i2, i3, i4);
-		if (dmg == 0 || dmg == 1) {
-			for(int x = i2; x > i2 - 8; --x) {
-				if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
-				}
-			}
-			for(int x = i2; x < i2 + 8; ++x) {
-				if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
+		if (dmg == 1) {
+			for(int x2 = i2; x2 < i2 + 8; ++x2) {
+				if (world1.getBlockId(x2, i3, i4) == Block.blockSteel.blockID) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
 				}
 			}
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3) == false) {
+				for(int x = i2; x > i2 - 8; --x) {
+					if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+
+					}
+				}
+			}
+
 		}
-		if (dmg == 0 || dmg == 2) {
+		if (dmg == 2) {
 			for(int y = i3; y < i3 + 8; ++y) {
 				if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
 				}
 			}
-			for(int y = i3; y > i3 - 8; --y) {
-				if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1) == false) {
+				for(int y2 = i3; y2 > i3 - 8; --y2) {
+					if (world1.getBlockId(i2, y2, i4) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+
+					}
 				}
 			}
+
 		}
-		if (dmg == 0 || dmg == 3) {
+		if (dmg == 3) {
 			for(int z = i4; z > i4 - 8; --z) {
 				if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
 				}
 			}
-			for(int z = i4; z < i4 + 8; ++z) {
-				if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4) == false) {
+				for(int z2 = i4; z2 < i4 + 8; ++z2) {
+					if (world1.getBlockId(i2, i3, z2) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+
+					}
+				}
+			}
+
+		}
+		if(dmg == 0) {
+			for (int x2 = i2; x2 < i2 + 8; ++x2) {
+				if (world1.getBlockId(x2, i3, i4) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+				}
+			}
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3) == false) {
+				for(int x = i2; x > i2 - 8; --x) {
+					if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+					}
+				}
+			}
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2) == false) {
+				for(int y = i3; y < i3 + 8; ++y) {
+					if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+					}
+				}
+			}
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1) == false) {
+				for(int y2 = i3; y2 > i3 - 8; --y2) {
+					if (world1.getBlockId(i2, y2, i4) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+					}
+				}
+			}
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0) == false) {
+				for(int z = i4; z > i4 - 8; --z) {
+					if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+					}
+				}
+			}
+			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4) == false) {
+				for(int z2 = i4; z2 < i4 + 8; ++z2) {
+					if (world1.getBlockId(i2, i3, z2) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+
+					}
 				}
 			}
 		}
+
 	}
-	private void tryToSlide(World world1, int i2, int i3, int i4, int damage, byte direction) {
+	private boolean tryToSlide(World world1, int i2, int i3, int i4, int damage, byte direction) {
 		if(canFallBelow(world1, i2, i3 - 1, i4) && i3 >= 0 && direction == 0) {
 			byte b8 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - b8, i3 - b8, i4 - b8, i2 + b8, i3 + b8, i4 + b8)) {
 				EntityFallingSand2 entityFallingSand9 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
 				world1.entityJoinedWorld(entityFallingSand9);
+				return true;
 			} else {
 				world1.setBlockAndMetadataWithNotify(i2, i3, i4, 0, 0);
 
@@ -94,12 +151,14 @@ public class BlockMagnet extends Block {
 					world1.setBlockAndMetadataWithNotify(i2, i3, i4, this.blockID, dmg);
 				}
 			}
+			return false;
 		}
 		if(canFallAbove(world1, i2, i3 + 1, i4) && i3 < 128 && direction == 1) {
 			byte byte0 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - byte0, i3 - byte0, i4 - byte0, i2 + byte0, i3 + byte0, i4 + byte0)) {
 				EntityFallingSand2 floating = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
 				world1.entityJoinedWorld(floating);
+				return true;
 			} else {
 				world1.setBlockWithNotify(i2, i3, i4, 0);
 
@@ -111,12 +170,14 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
+			return false;
 		}
 		if(canFallAbove(world1, i2 - 1, i3, i4) && i3 < 128 && direction == 2) {
 			byte byte0 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - byte0, i3 - byte0, i4 - byte0, i2 + byte0, i3 + byte0, i4 + byte0)) {
 				EntityFallingSand2 floating = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
 				world1.entityJoinedWorld(floating);
+				return true;
 			} else {
 				world1.setBlockWithNotify(i2, i3, i4, 0);
 
@@ -128,12 +189,14 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
+			return false;
 		}
 		if(canFallAbove(world1, i2 + 1, i3, i4) && i3 < 128 && direction == 3) {
 			byte byte0 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - byte0, i3 - byte0, i4 - byte0, i2 + byte0, i3 + byte0, i4 + byte0)) {
 				EntityFallingSand2 floating = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
 				world1.entityJoinedWorld(floating);
+				return true;
 			} else {
 				world1.setBlockWithNotify(i2, i3, i4, 0);
 
@@ -144,6 +207,7 @@ public class BlockMagnet extends Block {
 				if(i3 > 0) {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
+				return false;
 			}
 		}
 		if(canFallAbove(world1, i2, i3, i4 - 1) && i3 < 128 && direction == 4) {
@@ -151,6 +215,7 @@ public class BlockMagnet extends Block {
 			if(!fallInstantly && world1.checkChunksExist(i2 - byte0, i3 - byte0, i4 - byte0, i2 + byte0, i3 + byte0, i4 + byte0)) {
 				EntityFallingSand2 floating = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
 				world1.entityJoinedWorld(floating);
+				return true;
 			} else {
 				world1.setBlockWithNotify(i2, i3, i4, 0);
 
@@ -162,12 +227,14 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
+			return false;
 		}
 		if(canFallAbove(world1, i2, i3, i4 + 1) && i3 < 128 && direction == 5) {
 			byte byte0 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - byte0, i3 - byte0, i4 - byte0, i2 + byte0, i3 + byte0, i4 + byte0)) {
 				EntityFallingSand2 floating = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
 				world1.entityJoinedWorld(floating);
+				return true;
 			} else {
 				world1.setBlockWithNotify(i2, i3, i4, 0);
 
@@ -179,8 +246,9 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
+			return false;
 		}
-
+		return false;
 	}
 
 	public int tickRate() {
