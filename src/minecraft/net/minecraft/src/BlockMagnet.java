@@ -41,17 +41,14 @@ public class BlockMagnet extends Block {
 	public void updateTick(World world1, int i2, int i3, int i4, Random random5) {
 		dmg = world1.getBlockMetadata(i2, i3, i4);
 		if (dmg == 1) {
-			for(int x2 = i2; x2 < i2 + 8; ++x2) {
-				if (world1.getBlockId(x2, i3, i4) == Block.blockSteel.blockID) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
-				}
-			}
-			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3) == false) {
-				for(int x = i2; x > i2 - 8; --x) {
-					if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
+			for(int x2 = 0; x2 < 8; ++x2) {
+				if (world1.getBlockId(i2 + x2, i3, i4) == Block.blockSteel.blockID) {
+					if (world1.getBlockId( i2 - x2, i3, i4) == Block.blockSteel.blockID && this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3) == false) {
 						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
 
 					}
+				} else if (world1.getBlockId( i2 - x2, i3, i4) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
 				}
 			}
 
