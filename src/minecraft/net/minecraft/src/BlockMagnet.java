@@ -40,37 +40,42 @@ public class BlockMagnet extends Block {
 
 	public void updateTick(World world1, int i2, int i3, int i4, Random random5) {
 		dmg = world1.getBlockMetadata(i2, i3, i4);
-		for(int y = i3; y < i3 + 8; ++y) {
-			if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
-				this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+		if (dmg == 0 || dmg == 1) {
+			for(int x = i2; x > i2 - 8; --x) {
+				if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+				}
+			}
+			for(int x = i2; x < i2 + 8; ++x) {
+				if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+				}
 			}
 		}
-		for(int y = i3; y > i3 - 8; --y) {
-			if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
-				this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+		if (dmg == 0 || dmg == 2) {
+			for(int y = i3; y < i3 + 8; ++y) {
+				if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+				}
+			}
+			for(int y = i3; y > i3 - 8; --y) {
+				if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+				}
 			}
 		}
-		for(int x = i2; x > i2 - 8; --x) {
-			if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
-				this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+		if (dmg == 0 || dmg == 3) {
+			for(int z = i4; z > i4 - 8; --z) {
+				if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+				}
+			}
+			for(int z = i4; z < i4 + 8; ++z) {
+				if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+				}
 			}
 		}
-		for(int x = i2; x < i2 + 8; ++x) {
-			if (world1.getBlockId(x, i3, i4) == Block.blockSteel.blockID) {
-				this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
-			}
-		}
-		for(int z = i4; z > i4 - 8; --z) {
-			if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
-				this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
-			}
-		}
-		for(int z = i4; z < i4 + 8; ++z) {
-			if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
-				this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
-			}
-		}
-
 	}
 	private void tryToSlide(World world1, int i2, int i3, int i4, int damage, byte direction) {
 		if(canFallBelow(world1, i2, i3 - 1, i4) && i3 >= 0 && direction == 0) {
