@@ -47,40 +47,36 @@ public class BlockMagnet extends Block {
 						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
 
 					}
-				} else if (world1.getBlockId( i2 - x2, i3, i4) == Block.blockSteel.blockID) {
+				}
+				if (world1.getBlockId(i2 - x2, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x2, i3, i4) != Block.blockSteel.blockID) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
 				}
 			}
 
 		}
 		if (dmg == 2) {
-			for(int y = i3; y < i3 + 8; ++y) {
-				if (world1.getBlockId(i2, y, i4) == Block.blockSteel.blockID) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
-				}
-			}
-			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1) == false) {
-				for(int y2 = i3; y2 > i3 - 8; --y2) {
-					if (world1.getBlockId(i2, y2, i4) == Block.blockSteel.blockID) {
+			for(int y = 0; y < 8; ++y) {
+				if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1) == false){
 						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
-
 					}
+				}
+				if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
 				}
 			}
 
 		}
 		if (dmg == 3) {
-			for(int z = i4; z > i4 - 8; --z) {
-				if (world1.getBlockId(i2, i3, z) == Block.blockSteel.blockID) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
-				}
-			}
-			if(this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4) == false) {
-				for(int z2 = i4; z2 < i4 + 8; ++z2) {
-					if (world1.getBlockId(i2, i3, z2) == Block.blockSteel.blockID) {
-						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+			for(int z = 0; z < 8; ++z) {
+				if (world1.getBlockId(i2, i3, i4 + z) == Block.blockSteel.blockID) {
+					if (world1.getBlockId( i2, i3, i4 - z) == Block.blockSteel.blockID && this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5) == false) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
 
 					}
+				}
+				if (world1.getBlockId(i2, i3, i4 - z) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + z) != Block.blockSteel.blockID) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
 				}
 			}
 
