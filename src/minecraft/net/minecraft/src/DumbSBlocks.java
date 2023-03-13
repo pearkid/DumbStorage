@@ -46,9 +46,9 @@ public class DumbSBlocks {
         ModLoader.AddLocalization("tile.snadStone.gthree.name", "Nonuple Garvels");
         ModLoader.AddLocalization("tile.snadStone.gfour.name", "Unoctogintuple Garvels");
         ModLoader.AddLocalization("tile.magnet.base.name", "Universal Magnet");
-        ModLoader.AddLocalization("tile.magnet.X.name", "East/West Magnet");
-        ModLoader.AddLocalization("tile.magnet.Y.name", "Up/Down Magnet");
-        ModLoader.AddLocalization("tile.magnet.Z.name", "North/South Magnet");
+        ModLoader.AddLocalization("tile.magnet.X.name", "Bi-directional Magnet");
+        ModLoader.AddLocalization("tile.magnet.Y.name", "Bi-directional Magnet");
+        ModLoader.AddLocalization("tile.magnet.Z.name", "Bi-directional Magnet");
 
         ModLoader.AddRecipe(new ItemStack(Block.lockedChest, 4), new Object[]{"X", Character.valueOf('X'), Block.chest});
         ModLoader.AddRecipe(new ItemStack(snadStone, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Block.sand});
@@ -73,6 +73,7 @@ public class DumbSBlocks {
         ModLoader.AddRecipe(new ItemStack(stones, 1, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 0)});
         ModLoader.AddRecipe(new ItemStack(stones, 1, 2), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 1)});
         ModLoader.AddRecipe(new ItemStack(stones, 1, 3), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 2)});
+        ModLoader.AddRecipe(new ItemStack(magnet, 1, 0), new Object[]{"XXX", "XDX", "XXX", Character.valueOf('X'), new ItemStack(Item.ingotIron, 1), Character.valueOf('D'), new ItemStack(Item.redstone, 1)});
 
         ModLoader.AddRecipe(new ItemStack(Block.sand, 4), new Object[]{"X", Character.valueOf('X'), Block.sandStone});
         ModLoader.AddRecipe(new ItemStack(Block.dirt, 9), new Object[]{"X", Character.valueOf('X'), new ItemStack(dirts, 1, 0)});

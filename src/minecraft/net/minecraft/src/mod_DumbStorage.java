@@ -64,7 +64,7 @@ public class mod_DumbStorage extends BaseMod {
 
 
     public String Version () {
-        return "DumbStorage 0.2.2";
+        return "DumbStorage 0.3.0";
     }
     public mod_DumbStorage(){
 
