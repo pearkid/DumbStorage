@@ -15,7 +15,7 @@ public class DumbSBlocks {
         snadStone = (new BlockSnadStone(mod_DumbStorage.snadStoneID)).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setBlockName("snadStone");
         dirts = (new BlockDirts(mod_DumbStorage.dirtsID)).setHardness(0.5F).setStepSound(Block.soundGravelFootstep).setBlockName("dirts");
         stones = (new BlockStones(mod_DumbStorage.stonesID)).setHardness(0.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("stones");
-        magnet = (new BlockMagnet(mod_DumbStorage.magnetID)).setHardness(1.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setBlockName("magnet");
+        magnet = (new BlockMagnet(mod_DumbStorage.magnetID)).setHardness(0.0F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setBlockName("magnet");
 
         ModLoader.RegisterBlock(snadStone, ItemSnadStone.class);
         ModLoader.RegisterBlock(dirts, ItemDirts.class);

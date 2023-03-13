@@ -55,16 +55,31 @@ public class BlockMagnet extends Block {
 
 		}
 		if (dmg == 2) {
-			for(int y = 0; y < 8; ++y) {
-				if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID) {
-					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1) == false){
-						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+			boolean direction1 = true;
+			boolean start = false;
+			for(int y = -8; y < 0; ++y) {
+
+				if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID) {
+					start = true;
+					if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID){
+						direction1 = true;
+					}
+					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID) {
+						direction1 = false;
 					}
 				}
-				if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID) {
+
+
+			}
+			if (start == true) {
+				if (direction1 == true) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
 				}
+				if (direction1 == false) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+				}
 			}
+
 
 		}
 		if (dmg == 3) {
@@ -72,7 +87,6 @@ public class BlockMagnet extends Block {
 				if (world1.getBlockId(i2, i3, i4 + z) == Block.blockSteel.blockID) {
 					if (world1.getBlockId( i2, i3, i4 - z) == Block.blockSteel.blockID && this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5) == false) {
 						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
-
 					}
 				}
 				if (world1.getBlockId(i2, i3, i4 - z) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + z) != Block.blockSteel.blockID) {
@@ -104,7 +118,6 @@ public class BlockMagnet extends Block {
 					world1.setBlockAndMetadataWithNotify(i2, i3, i4, this.blockID, dmg);
 				}
 			}
-			return false;
 		}
 		if(canFallAbove(world1, i2, i3 + 1, i4) && i3 < 128 && direction == 1) {
 			byte byte0 = 32;
@@ -123,7 +136,6 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
-			return false;
 		}
 		if(canFallAbove(world1, i2 - 1, i3, i4) && i3 < 128 && direction == 2) {
 			byte byte0 = 32;
@@ -142,7 +154,6 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
-			return false;
 		}
 		if(canFallAbove(world1, i2 + 1, i3, i4) && i3 < 128 && direction == 3) {
 			byte byte0 = 32;
@@ -160,7 +171,6 @@ public class BlockMagnet extends Block {
 				if(i3 > 0) {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
-				return false;
 			}
 		}
 		if(canFallAbove(world1, i2, i3, i4 - 1) && i3 < 128 && direction == 4) {
@@ -180,7 +190,6 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
-			return false;
 		}
 		if(canFallAbove(world1, i2, i3, i4 + 1) && i3 < 128 && direction == 5) {
 			byte byte0 = 32;
@@ -199,7 +208,6 @@ public class BlockMagnet extends Block {
 					world1.setBlockWithNotify(i2, i3, i4, this.blockID);
 				}
 			}
-			return false;
 		}
 		return false;
 	}
