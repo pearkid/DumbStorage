@@ -171,7 +171,8 @@ public class DumbSGenSecretDoor extends DumbSGenStructures {
         int item = random.nextInt(37);
         switch(item) {
             case 0:
-                return new ItemStack(DumbSBlocks.magnet.blockID, 1, random.nextInt(3));
+                int [] mgmd = {0, 2, 2};
+                return new ItemStack(DumbSBlocks.magnet.blockID, 1, mgmd[random.nextInt(mgmd.length)]);
             case 1:
                 return new ItemStack(DumbSBlocks.dirts.blockID, 1, random.nextInt(7));
             case 2:
