@@ -17,9 +17,14 @@ public class ItemMagnet extends ItemBlock {
 		}
 		if(i1 == 3) {
 			return 2;
-		} else {
-			return i1;
 		}
+		if(i1 == 5) {
+			return 6;
+		}
+		if(i1 == 7) {
+			return 6;
+		}
+		return i1;
 	}
 
 	public String getItemNameIS(ItemStack itemStack1) {
