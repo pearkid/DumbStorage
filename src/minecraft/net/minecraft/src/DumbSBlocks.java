@@ -49,6 +49,10 @@ public class DumbSBlocks {
         ModLoader.AddLocalization("tile.magnet.X.name", "Bidirectional Magnet");
         ModLoader.AddLocalization("tile.magnet.Y.name", "Bidirectional Magnet");
         ModLoader.AddLocalization("tile.magnet.Z.name", "Bidirectional Magnet");
+        ModLoader.AddLocalization("tile.magnet.mbase.name", "Universal Monster Magnet");
+        ModLoader.AddLocalization("tile.magnet.mX.name", "Bidirectional Monster Magnet");
+        ModLoader.AddLocalization("tile.magnet.mY.name", "Bidirectional Monster Magnet");
+        ModLoader.AddLocalization("tile.magnet.mZ.name", "Bidirectional Monster Magnet");
 
         ModLoader.AddRecipe(new ItemStack(Block.lockedChest, 4), new Object[]{"X", Character.valueOf('X'), Block.chest});
         ModLoader.AddRecipe(new ItemStack(snadStone, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Block.sand});
