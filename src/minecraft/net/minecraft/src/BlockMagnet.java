@@ -28,7 +28,40 @@ public class BlockMagnet extends Block {
 	}
 
 	protected int damageDropped(int i1) {
+		if(i1 == 0) {
+			return i1;
+		}
+		if(i1 == 1 || i1 == 2 || i1 == 3) {
+			return 2;
+		}
 		return i1;
+	}
+	public void onBlockPlacedBy(World world1, int i2, int i3, int i4, EntityLiving entityLiving5) {
+		byte md = (byte) world1.getBlockMetadata(i2, i3, i4);
+		if (md == 0) {
+			world1.setBlockMetadataWithNotify(i2, i3, i4, 0);
+		}
+		if (md == 1 || md == 2 || md == 3) {
+			if(world1.getBlockMetadata(i2, i3, i4) == 2){
+				int pmd = getPlayerDirection(i2, i3, i4, (EntityPlayer)entityLiving5);
+				world1.setBlockMetadataWithNotify(i2, i3, i4, pmd);
+			}
+		}
+	}
+	private static int getPlayerDirection(int i1, int i2, int i3, EntityPlayer entityPlayer4) {
+		if(MathHelper.abs((float)entityPlayer4.posX - (float)i1) < 2.0F && MathHelper.abs((float)entityPlayer4.posZ - (float)i3) < 2.0F) {
+			double d5 = entityPlayer4.posY + 1.82D - (double)entityPlayer4.yOffset;
+			if(d5 - (double)i2 > 2.0D) {
+				return 2;
+			}
+
+			if((double)i2 - d5 > 0.0D) {
+				return 2;
+			}
+		}
+
+		int i7 = MathHelper.floor_double((double)(entityPlayer4.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+		return i7 == 0 ? 3 : (i7 == 1 ? 1 : (i7 == 2 ? 3 : (i7 == 3 ? 1 : 2)));
 	}
 	public void onBlockAdded(World world1, int i2, int i3, int i4) {
 		world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());

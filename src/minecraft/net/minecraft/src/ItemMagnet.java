@@ -12,7 +12,14 @@ public class ItemMagnet extends ItemBlock {
 	}
 
 	public int getPlacedBlockMetadata(int i1) {
-		return i1;
+		if(i1 == 1) {
+			return 2;
+		}
+		if(i1 == 3) {
+			return 2;
+		} else {
+			return i1;
+		}
 	}
 
 	public String getItemNameIS(ItemStack itemStack1) {
