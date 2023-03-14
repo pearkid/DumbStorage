@@ -69,10 +69,10 @@ public class DumbSBlocks {
         ModLoader.AddRecipe(new ItemStack(snadStone, 1, 5), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(snadStone, 1, 4)});
         ModLoader.AddRecipe(new ItemStack(snadStone, 1, 6), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(snadStone, 1, 5)});
         ModLoader.AddRecipe(new ItemStack(snadStone, 1, 7), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(snadStone, 1, 6)});
-        ModLoader.AddRecipe(new ItemStack(stones, 1, 0), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Block.stone});
-        ModLoader.AddRecipe(new ItemStack(stones, 1, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 0)});
-        ModLoader.AddRecipe(new ItemStack(stones, 1, 2), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 1)});
-        ModLoader.AddRecipe(new ItemStack(stones, 1, 3), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 2)});
+        ModLoader.AddRecipe(new ItemStack(stones, 1, 4), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Block.stone});
+        ModLoader.AddRecipe(new ItemStack(stones, 1, 5), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 4)});
+        ModLoader.AddRecipe(new ItemStack(stones, 1, 6), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 5)});
+        ModLoader.AddRecipe(new ItemStack(stones, 1, 7), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(stones, 1, 6)});
         ModLoader.AddRecipe(new ItemStack(magnet, 1, 0), new Object[]{"XXX", "XDX", "XXX", Character.valueOf('X'), new ItemStack(Item.ingotIron, 1), Character.valueOf('D'), new ItemStack(Item.redstone, 1)});
         ModLoader.AddRecipe(new ItemStack(magnet, 1, 2), new Object[]{"XDX", "XXX", "XDX", Character.valueOf('X'), new ItemStack(Item.ingotIron, 1), Character.valueOf('D'), new ItemStack(Item.redstone, 1)});
 
