@@ -206,6 +206,130 @@ public class BlockMagnet extends Block {
 				}
 			}
 		}
+		if (dmg == 5) {
+			boolean direction1 = true;
+			boolean start = false;
+			byte loc;
+			for(int x = -8; x < 0; ++x) {
+				if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID) {
+					start = true;
+					if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - x, i3, i4) != Block.blockSteel.blockID){
+						direction1 = true;
+						loc = (byte) (x);
+					}
+					if (world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x, i3, i4) != Block.blockSteel.blockID) {
+						direction1 = false;
+						loc = (byte) (x);
+					}
+				}
+			}
+			if (start == true) {
+				if (direction1 == true) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+				}
+				if (direction1 == false) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+				}
+			}
+		}
+		if (dmg == 6) {
+			boolean direction1 = true;
+			boolean start = false;
+			for(int y = -8; y < 0; ++y) {
+
+				if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID) {
+					start = true;
+					if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID){
+						direction1 = true;
+					}
+					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID) {
+						direction1 = false;
+					}
+				}
+
+
+			}
+			if (start == true) {
+				if (direction1 == true) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+				}
+				if (direction1 == false) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+				}
+			}
+
+
+		}
+		if (dmg == 7) {
+			boolean direction1 = true;
+			boolean start = false;
+			for(int x = -8; x < 0; ++x) {
+				if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID) {
+					start = true;
+					if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - x) != Block.blockSteel.blockID){
+						direction1 = true;
+					}
+					if (world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + x) != Block.blockSteel.blockID) {
+						direction1 = false;
+					}
+				}
+			}
+			if (start == true) {
+				if (direction1 == true) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+				}
+				if (direction1 == false) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+				}
+			}
+		}
+		if(dmg == 4) {
+			 byte direction = 0;
+			boolean start = false;
+			for(int p = -8; p < 0; ++p) {
+				if(world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID) {
+					start = true;
+					if (world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - p, i4) != Block.blockSteel.blockID){
+						direction = 0;
+					}
+					if (world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID) {
+						direction = 1;
+					}
+					if (world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - p, i3, i4) != Block.blockSteel.blockID){
+						direction = 2;
+					}
+					if (world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + p, i3, i4) != Block.blockSteel.blockID) {
+						direction = 3;
+					}
+					if (world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - p) != Block.blockSteel.blockID){
+						direction = 4;
+					}
+					if (world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + p) != Block.blockSteel.blockID) {
+						direction = 5;
+					}
+				}
+			}
+			if (start == true) {
+				if (direction == 0) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+				}
+				if (direction == 1) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+				}
+				if (direction == 2) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+				}
+				if (direction == 3) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+				}
+				if (direction == 4) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+				}
+				if (direction == 5) {
+					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+				}
+			}
+		}
 
 	}
 	private boolean tryToSlide(World world1, int i2, int i3, int i4, int damage, byte direction) {
