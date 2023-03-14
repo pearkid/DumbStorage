@@ -15,9 +15,7 @@ public class BlockMagnet extends Block {
 
 
 	public int getBlockTextureFromSideAndMetadata(int i1, int i2) {
-		return i2 == 0 ? mod_DumbStorage.magtex1 : i2 == 1 ? (i1 == 4 ? mod_DumbStorage.magtex4 : (i1 == 5 ? mod_DumbStorage.magtex3 : (i1 == 2 ? mod_DumbStorage.magtex5 : mod_DumbStorage.magtex6))) : i2 == 2 ? (i1 == 0 ? mod_DumbStorage.magtex4 : (i1 == 1 ? mod_DumbStorage.magtex3 : mod_DumbStorage.magtex2)) : i2 == 3 ? (i1 == 2 ? mod_DumbStorage.magtex3 : (i1 == 3 ? mod_DumbStorage.magtex4 : i1 == 1 || i1 == 0 ? mod_DumbStorage.magtex2 : i1 == 5 ? mod_DumbStorage.magtex6 : mod_DumbStorage.magtex5)) : i2 == 4 ? mod_DumbStorage.magtex1 : i2 == 5 ? (i1 == 4 ? mod_DumbStorage.magtex4 : (i1 == 5 ? mod_DumbStorage.magtex3 : (i1 == 2 ? mod_DumbStorage.magtex5 : mod_DumbStorage.magtex6))) : i2 == 6 ? (i1 == 0 ? mod_DumbStorage.magtex4 : (i1 == 1 ? mod_DumbStorage.magtex3 : mod_DumbStorage.magtex2)) : (i1 == 2 ? mod_DumbStorage.magtex3 : (i1 == 3 ? mod_DumbStorage.magtex4 : i1 == 1 || i1 == 0 ? mod_DumbStorage.magtex2 : i1 == 5 ? mod_DumbStorage.magtex6 : mod_DumbStorage.magtex5));
-
-
+		return i2 == 0 ? mod_DumbStorage.magtex1 : i2 == 1 ? (i1 == 4 ? mod_DumbStorage.magtex4 : (i1 == 5 ? mod_DumbStorage.magtex3 : (i1 == 2 ? mod_DumbStorage.magtex5 : mod_DumbStorage.magtex6))) : i2 == 2 ? (i1 == 0 ? mod_DumbStorage.magtex4 : (i1 == 1 ? mod_DumbStorage.magtex3 : mod_DumbStorage.magtex2)) : i2 == 3 ? (i1 == 2 ? mod_DumbStorage.magtex3 : (i1 == 3 ? mod_DumbStorage.magtex4 : i1 == 1 || i1 == 0 ? mod_DumbStorage.magtex2 : i1 == 5 ? mod_DumbStorage.magtex6 : mod_DumbStorage.magtex5)) : i2 == 4 ? mod_DumbStorage.monmagtex1 : i2 == 5 ? (i1 == 4 ? mod_DumbStorage.monmagtex4 : (i1 == 5 ? mod_DumbStorage.monmagtex3 : (i1 == 2 ? mod_DumbStorage.monmagtex5 : mod_DumbStorage.monmagtex6))) : i2 == 6 ? (i1 == 0 ? mod_DumbStorage.monmagtex4 : (i1 == 1 ? mod_DumbStorage.monmagtex3 : mod_DumbStorage.monmagtex2)) : (i1 == 2 ? mod_DumbStorage.monmagtex3 : (i1 == 3 ? mod_DumbStorage.monmagtex4 : i1 == 1 || i1 == 0 ? mod_DumbStorage.monmagtex2 : i1 == 5 ? mod_DumbStorage.monmagtex6 : mod_DumbStorage.monmagtex5));
 	}
 
 	public int getBlockTextureFromSide(int i1) {

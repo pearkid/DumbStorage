@@ -36,6 +36,12 @@ public class mod_DumbStorage extends BaseMod {
     public static int magtex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag4.png");
     public static int magtex5 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag5.png");
     public static int magtex6 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/mag6.png");
+    public static int monmagtex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag1.png");
+    public static int monmagtex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag2.png");
+    public static int monmagtex3 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag3.png");
+    public static int monmagtex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag4.png");
+    public static int monmagtex5 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag5.png");
+    public static int monmagtex6 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag6.png");
 
     /*public static int texture0 = 0;
     public static int texture1 = 1;
