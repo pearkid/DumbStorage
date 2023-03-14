@@ -46,9 +46,9 @@ public class DumbSBlocks {
         ModLoader.AddLocalization("tile.snadStone.gthree.name", "Nonuple Garvels");
         ModLoader.AddLocalization("tile.snadStone.gfour.name", "Unoctogintuple Garvels");
         ModLoader.AddLocalization("tile.magnet.base.name", "Universal Magnet");
-        ModLoader.AddLocalization("tile.magnet.X.name", "Bi-directional Magnet");
-        ModLoader.AddLocalization("tile.magnet.Y.name", "Bi-directional Magnet");
-        ModLoader.AddLocalization("tile.magnet.Z.name", "Bi-directional Magnet");
+        ModLoader.AddLocalization("tile.magnet.X.name", "Bidirectional Magnet");
+        ModLoader.AddLocalization("tile.magnet.Y.name", "Bidirectional Magnet");
+        ModLoader.AddLocalization("tile.magnet.Z.name", "Bidirectional Magnet");
 
         ModLoader.AddRecipe(new ItemStack(Block.lockedChest, 4), new Object[]{"X", Character.valueOf('X'), Block.chest});
         ModLoader.AddRecipe(new ItemStack(snadStone, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Block.sand});
