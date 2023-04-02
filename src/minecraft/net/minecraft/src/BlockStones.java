@@ -39,6 +39,23 @@ public class BlockStones extends Block {
 		return this.blockIndexInTexture;
 
 	}
+	public void onBlockAdded(World world1, int i2, int i3, int i4){
+		int md = world1.getBlockMetadata(i2, i3, i4);
+		if(md == 1) {
+			world1.setBlockAndMetadataWithNotify(i2, i3, i4, pistonBase.blockID, 6);
+		}
+		if(md == 2) {
+			world1.setBlockAndMetadataWithNotify(i2, i3, i4, pistonStickyBase.blockID, 6);
+		}
+		if(md == 3) {
+
+
+			for (int  f = 0; f < 15; ++f) {
+				world1.setBlockAndMetadata(i2, i3, i4 + (2 * f), 2, f);
+			}
+
+		}
+	}
 
 	public int getBlockTextureFromSide(int i1) {
 		return this.getBlockTextureFromSideAndMetadata(i1, 0);

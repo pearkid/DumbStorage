@@ -103,6 +103,7 @@ public class mod_DumbStorage extends BaseMod {
             int posZ = j + random.nextInt(16);
             (new DumbSGenSecretDoor(Block.redstoneWire.blockID, Block.redstoneWire.blockID, true, random.nextBoolean())).generate(world, random, posX, posY, posZ);
         }
+
     }
     World world;
 
