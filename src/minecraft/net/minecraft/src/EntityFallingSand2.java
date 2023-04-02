@@ -78,6 +78,7 @@ public class EntityFallingSand2 extends Entity {
 			}
 
 
+
 			if(this.isCollided) {
 				this.motionX *= (double)0.7F;
 				this.motionZ *= (double)0.7F;
@@ -124,7 +125,7 @@ public class EntityFallingSand2 extends Entity {
 					}
 				}
 
-			} else if(this.fallTime > 100 && !this.worldObj.multiplayerWorld) {
+			} else if(this.fallTime >= 21 && !this.worldObj.multiplayerWorld && this.blockID == mod_DumbStorage.magnetID) {
 				//this.dropItem(this.blockID, 1);
 				this.setEntityDead();
 				this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
@@ -140,9 +141,10 @@ public class EntityFallingSand2 extends Entity {
 					//this.dropItem(this.blockID, 1);
 					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
 				}
-			} else if(this.fallTime > 100 && !this.worldObj.multiplayerWorld) {
+			} else if(this.fallTime >= 21 && !this.worldObj.multiplayerWorld && this.blockID == mod_DumbStorage.magnetID) {
 				//this.dropItem(this.blockID, 1);
 				this.setEntityDead();
+				this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
 			}
 
 		}

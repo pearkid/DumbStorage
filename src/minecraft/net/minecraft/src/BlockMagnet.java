@@ -91,10 +91,10 @@ public class BlockMagnet extends Block {
 			for(int x = -8; x < 0; ++x) {
 				if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - x, i3, i4) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + x, i3, i4) != true || world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - x, i3, i4) == true){
 						direction1 = true;
 					}
-					if (world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x, i3, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - x, i3, i4) != true || world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + x, i3, i4) == true) {
 						direction1 = false;
 					}
 				}
@@ -115,10 +115,10 @@ public class BlockMagnet extends Block {
 
 				if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + y, i4) != true || world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - y, i4) == true){
 						direction1 = true;
 					}
-					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - y, i4) != true || world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + y, i4) == true) {
 						direction1 = false;
 					}
 				}
@@ -142,10 +142,10 @@ public class BlockMagnet extends Block {
 			for(int x = -8; x < 0; ++x) {
 				if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - x) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + x) != true || world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - x) == true){
 						direction1 = true;
 					}
-					if (world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + x) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - x) != true || world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + x) == true) {
 						direction1 = false;
 					}
 				}
