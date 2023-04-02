@@ -160,7 +160,7 @@ public class BlockMagnet extends Block {
 			}
 		}
 		if(dmg == 0) {
-			byte direction = 0;
+			byte direction = 7;
 			boolean start = false;
 			for(int p = -8; p < 0; ++p) {
 				if(world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID) {
@@ -186,7 +186,7 @@ public class BlockMagnet extends Block {
 				}
 			}
 			if (start == true) {
-				if (direction == 0 && world1.getBlockId(i2, i3 - 1, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 2, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 3, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 4, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 5, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 6, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 7, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 8, i4) == Block.blockSteel.blockID) {
+				if (direction == 0) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
 				}
 				if (direction == 1) {
@@ -281,7 +281,7 @@ public class BlockMagnet extends Block {
 			}
 		}
 		if(dmg == 4) {
-			byte direction = 0;
+			byte direction = 7;
 			boolean start = false;
 			for (int p = -8; p < 0; ++p) {
 				if (world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID) {
@@ -307,7 +307,7 @@ public class BlockMagnet extends Block {
 				}
 			}
 			if (start == true) {
-				if (direction == 0 && world1.getBlockId(i2, i3 - 1, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 2, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 3, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 4, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 5, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 6, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 7, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 8, i4) == Block.blockSteel.blockID) {
+				if (direction == 0) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
 				}
 				if (direction == 1) {
