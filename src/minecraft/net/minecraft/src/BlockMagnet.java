@@ -165,22 +165,22 @@ public class BlockMagnet extends Block {
 			for(int p = -8; p < 0; ++p) {
 				if(world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - p, i4) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + p, i4) != true || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - p, i4) == true){
 						direction = 0;
 					}
-					if (world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - p, i4) != true || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + p, i4) == true) {
 						direction = 1;
 					}
-					if (world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - p, i3, i4) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + p, i3, i4) != true || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - p, i3, i4) == true){
 						direction = 2;
 					}
-					if (world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + p, i3, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - p, i3, i4) != true || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + p, i3, i4) == true) {
 						direction = 3;
 					}
-					if (world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - p) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + p) != true || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - p) == true){
 						direction = 4;
 					}
-					if (world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + p) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - p) != true || world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + p) == true) {
 						direction = 5;
 					}
 				}
@@ -209,17 +209,14 @@ public class BlockMagnet extends Block {
 		if (dmg == 5) {
 			boolean direction1 = true;
 			boolean start = false;
-			byte loc;
 			for(int x = -8; x < 0; ++x) {
 				if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - x, i3, i4) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + x, i3, i4) != true || world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - x, i3, i4) == true){
 						direction1 = true;
-						loc = (byte) (x);
 					}
-					if (world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x, i3, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2 - x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - x, i3, i4) != true || world1.getBlockId(i2 + x, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - x, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + x, i3, i4) == true) {
 						direction1 = false;
-						loc = (byte) (x);
 					}
 				}
 			}
@@ -239,10 +236,10 @@ public class BlockMagnet extends Block {
 
 				if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + y, i4) != true || world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - y, i4) == true){
 						direction1 = true;
 					}
-					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3 - y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - y, i4) != true || world1.getBlockId(i2, i3 + y, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - y, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + y, i4) == true) {
 						direction1 = false;
 					}
 				}
@@ -266,10 +263,10 @@ public class BlockMagnet extends Block {
 			for(int x = -8; x < 0; ++x) {
 				if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - x) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + x) != true || world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - x) == true){
 						direction1 = true;
 					}
-					if (world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + x) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3, i4 - x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - x) != true || world1.getBlockId(i2, i3, i4 + x) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - x) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + x) == true) {
 						direction1 = false;
 					}
 				}
@@ -284,33 +281,33 @@ public class BlockMagnet extends Block {
 			}
 		}
 		if(dmg == 4) {
-			 byte direction = 0;
+			byte direction = 0;
 			boolean start = false;
-			for(int p = -8; p < 0; ++p) {
-				if(world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID) {
+			for (int p = -8; p < 0; ++p) {
+				if (world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID) {
 					start = true;
-					if (direction == 0 && world1.getBlockId(i2, i3 - 1, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 2, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 3, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 4, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 5, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 6, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 7, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 8, i4) == Block.blockSteel.blockID) {
-						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+					if (world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + p, i4) != true || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - p, i4) == true) {
+						direction = 0;
 					}
-					if (world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 - p, i4) != true || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - p, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3 + p, i4) == true) {
 						direction = 1;
 					}
-					if (world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - p, i3, i4) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + p, i3, i4) != true || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - p, i3, i4) == true) {
 						direction = 2;
 					}
-					if (world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + p, i3, i4) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 + p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 - p, i3, i4) != true || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID && world1.getBlockId(i2 - p, i3, i4) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2 + p, i3, i4) == true) {
 						direction = 3;
 					}
-					if (world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - p) != Block.blockSteel.blockID){
+					if (world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + p) != true || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - p) == true) {
 						direction = 4;
 					}
-					if (world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + p) != Block.blockSteel.blockID) {
+					if (world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 + p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 - p) != true || world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID && world1.getBlockId(i2, i3, i4 - p) != Block.blockSteel.blockID && world1.isBlockGettingPowered(i2, i3, i4 + p) == true) {
 						direction = 5;
 					}
 				}
 			}
 			if (start == true) {
-				if (direction == 0) {
+				if (direction == 0 && world1.getBlockId(i2, i3 - 1, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 2, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 3, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 4, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 5, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 6, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 7, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 8, i4) == Block.blockSteel.blockID) {
 					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
 				}
 				if (direction == 1) {
