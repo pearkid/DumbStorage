@@ -289,8 +289,8 @@ public class BlockMagnet extends Block {
 			for(int p = -8; p < 0; ++p) {
 				if(world1.getBlockId(i2, i3, i4 + p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3, i4 - p) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 - p, i3, i4) == Block.blockSteel.blockID || world1.getBlockId(i2 + p, i3, i4) == Block.blockSteel.blockID) {
 					start = true;
-					if (world1.getBlockId(i2, i3 + p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 - p, i4) != Block.blockSteel.blockID){
-						direction = 0;
+					if (direction == 0 && world1.getBlockId(i2, i3 - 1, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 2, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 3, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 4, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 5, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 6, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 7, i4) == Block.blockSteel.blockID || direction == 0 && world1.getBlockId(i2, i3 - 8, i4) == Block.blockSteel.blockID) {
+						this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
 					}
 					if (world1.getBlockId(i2, i3 - p, i4) == Block.blockSteel.blockID && world1.getBlockId(i2, i3 + p, i4) != Block.blockSteel.blockID) {
 						direction = 1;
