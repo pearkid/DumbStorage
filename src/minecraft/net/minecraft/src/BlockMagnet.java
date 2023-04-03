@@ -8,6 +8,21 @@ public class BlockMagnet extends Block {
 	public static boolean fallInstantly = false;
 	public static int dmg;
 	private static int damage;
+	public int bid1;
+	public int bid2;
+	public int bid3;
+	public int bid4;
+	public int bid5;
+	public int bid6;
+	public int bid7;
+	public byte bmd1;
+	public byte bmd2;
+	public byte bmd3;
+	public byte bmd4;
+	public byte bmd5;
+	public byte bmd6;
+	public byte bmd7;
+
 	public BlockMagnet(int i1) {
 		super(i1, 14, Material.iron);
 		this.setLightOpacity(255);
@@ -101,10 +116,10 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction1 == true) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 2);
 				}
 				if (direction1 == false) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 3);
 				}
 			}
 		}
@@ -127,10 +142,10 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction1 == true) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 0);
 				}
 				if (direction1 == false) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 1);
 				}
 			}
 
@@ -152,10 +167,10 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction1 == true) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 4);
 				}
 				if (direction1 == false) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 5);
 				}
 			}
 		}
@@ -187,22 +202,22 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction == 0) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 0);
 				}
 				if (direction == 1) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 1);
 				}
 				if (direction == 2) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 2);
 				}
 				if (direction == 3) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 3);
 				}
 				if (direction == 4) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 4);
 				}
 				if (direction == 5) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 5);
 				}
 			}
 		}
@@ -222,10 +237,10 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction1 == true) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 2);
 				}
 				if (direction1 == false) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 3);
 				}
 			}
 		}
@@ -248,10 +263,10 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction1 == true) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 0);
 				}
 				if (direction1 == false) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 1);
 				}
 			}
 
@@ -273,10 +288,10 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction1 == true) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 4);
 				}
 				if (direction1 == false) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 5);
 				}
 			}
 		}
@@ -308,32 +323,73 @@ public class BlockMagnet extends Block {
 			}
 			if (start == true) {
 				if (direction == 0) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 0);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 0);
+					bid1 = world1.getBlockId(i2, i3 - 1, i4);
+					bid2 = world1.getBlockId(i2, i3 - 2, i4);
+					bid3 = world1.getBlockId(i2, i3 - 3, i4);
+					bid4 = world1.getBlockId(i2, i3 - 4, i4);
+					bid5 = world1.getBlockId(i2, i3 - 5, i4);
+					bid6 = world1.getBlockId(i2, i3 - 6, i4);
+					bid7 = world1.getBlockId(i2, i3 - 2, i4);
+					bmd1 = (byte) world1.getBlockMetadata(i2, i3 - 1, i4);
+					bmd2 = (byte) world1.getBlockMetadata(i2, i3 - 2, i4);
+					bmd3 = (byte) world1.getBlockMetadata(i2, i3 - 3, i4);
+					bmd4 = (byte) world1.getBlockMetadata(i2, i3 - 4, i4);
+					bmd5 = (byte) world1.getBlockMetadata(i2, i3 - 5, i4);
+					bmd6 = (byte) world1.getBlockMetadata(i2, i3 - 6, i4);
+					bmd7 = (byte) world1.getBlockMetadata(i2, i3 - 7, i4);
+					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonExtension.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.doorWood.blockID && bid1 != Block.doorSteel.blockID && bid1 != Block.trapdoor.blockID) {
+						this.tryToSlide(world1, i2, i3 - 1, i4, bid1 , bmd1, (byte) 0);
+						if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonExtension.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.doorWood.blockID && bid2 != Block.doorSteel.blockID && bid2 != Block.trapdoor.blockID) {
+							world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
+							this.tryToSlide(world1, i2, i3 - 2, i4, bid2 , bmd2, (byte) 0);
+							if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonExtension.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.doorWood.blockID && bid3 != Block.doorSteel.blockID && bid3 != Block.trapdoor.blockID) {
+								world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
+								this.tryToSlide(world1, i2, i3 - 3, i4, bid3 , bmd3, (byte) 0);
+								if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonExtension.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.doorWood.blockID && bid4 != Block.doorSteel.blockID && bid4 != Block.trapdoor.blockID) {
+									world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
+									this.tryToSlide(world1, i2, i3 - 4, i4, bid4 , bmd4, (byte) 0);
+									if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonExtension.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.doorWood.blockID && bid5 != Block.doorSteel.blockID && bid5 != Block.trapdoor.blockID) {
+										world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
+										this.tryToSlide(world1, i2, i3 - 5, i4, bid5 , bmd5, (byte) 0);
+										if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonExtension.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.doorWood.blockID && bid6 != Block.doorSteel.blockID && bid6 != Block.trapdoor.blockID) {
+											world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
+											this.tryToSlide(world1, i2, i3 - 6, i4, bid6 , bmd6, (byte) 0);
+											if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonExtension.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.doorWood.blockID && bid7 != Block.doorSteel.blockID && bid7 != Block.trapdoor.blockID) {
+												world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
+												this.tryToSlide(world1, i2, i3 - 7, i4, bid7 , bmd7, (byte) 0);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 				if (direction == 1) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 1);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 1);
 				}
 				if (direction == 2) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 2);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 2);
 				}
 				if (direction == 3) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 3);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 3);
 				}
 				if (direction == 4) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 4);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 4);
 				}
 				if (direction == 5) {
-					this.tryToSlide(world1, i2, i3, i4, dmg, (byte) 5);
+					this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 5);
 				}
 			}
 		}
 
 	}
-	private boolean tryToSlide(World world1, int i2, int i3, int i4, int damage, byte direction) {
+	private boolean tryToSlide(World world1, int i2, int i3, int i4, int bid, int damage, byte direction) {
 		if(canFallBelow(world1, i2, i3 - 1, i4) && i3 >= 0 && direction == 0) {
 			byte b8 = 32;
 			if(!fallInstantly && world1.checkChunksExist(i2 - b8, i3 - b8, i4 - b8, i2 + b8, i3 + b8, i4 + b8)) {
-				EntityFallingSand2 entityFallingSand9 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), this.blockID, damage, direction);
+				EntityFallingSand2 entityFallingSand9 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
 				world1.entityJoinedWorld(entityFallingSand9);
 				return true;
 			} else {

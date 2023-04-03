@@ -8,6 +8,7 @@ public class EntityFallingSand2 extends Entity {
 	public int md = 2;
 	public byte thing = 1;
 	public byte direction;
+	public float splode;
 	public String texture = "/DumbStorageTextures/MissingTexture.png";
 
 	public EntityFallingSand2(World world1) {
@@ -84,12 +85,15 @@ public class EntityFallingSand2 extends Entity {
 				this.motionZ *= (double)0.7F;
 				this.motionY *= -0.5D;
 				if((this.worldObj.getBlockId(i1 + 1, i2, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1 + 1, i2, i3) == mod_DumbStorage.magnetID) || (this.worldObj.getBlockId(i1 - 1, i2, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1 - 1, i2, i3) == mod_DumbStorage.magnetID) || (this.worldObj.getBlockId(i1, i2 + 1, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2 + 1, i3) == mod_DumbStorage.magnetID)|| (this.worldObj.getBlockId(i1, i2 - 1, i3) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2 - 1, i3) == mod_DumbStorage.magnetID)|| (this.worldObj.getBlockId(i1, i2, i3 + 1) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2, i3 + 1) == mod_DumbStorage.magnetID) || (this.worldObj.getBlockId(i1, i2, i3 - 1) == Block.blockSteel.blockID || this.worldObj.getBlockId(i1, i2, i3 - 1) == mod_DumbStorage.magnetID) || motionX == 0 && motionY == 0 && motionZ == 0) {
-					if (this.blockID == mod_DumbStorage.magnetID) {
-						this.setEntityDead();
-					}
+					this.setEntityDead();
 					if(direction == 0) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
-							//this.dropItem(this.blockID, 1);
+							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID) {
+								splode = 2F;
+							} else {
+								splode = 0.1F;
+							}
+							this.worldObj.createExplosion((Entity)null, i1, i2, i3, splode);
 							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
 						}
 					}
@@ -134,7 +138,7 @@ public class EntityFallingSand2 extends Entity {
 				this.motionX *= (double)0.7F;
 				this.motionZ *= (double)0.7F;
 				this.motionY *= -0.5D;
-				if (this.blockID != mod_DumbStorage.magnetID) {
+				if (this.blockID == mod_DumbStorage.snadStoneID) {
 					this.setEntityDead();
 				}
 				if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
