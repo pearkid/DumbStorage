@@ -88,51 +88,79 @@ public class EntityFallingSand2 extends Entity {
 					this.setEntityDead();
 					if(direction == 0) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
-							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID) {
+							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID && this.blockID != Block.stairSingle.blockID) {
 								splode = 2F;
 							} else {
 								splode = 0.1F;
 							}
 							this.worldObj.createExplosion((Entity)null, i1, i2, i3, splode);
-							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+								this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+							} else {
+								this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							}
 						}
 					}
 					if(direction == 1) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2 + 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
-							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+								this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+							} else {
+								this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							}
 						}
 					}
 					if(direction == 2) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1 - 1, i2, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
-							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+								this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+							} else {
+								this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							}
 						}
 					}
 					if(direction == 3) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1 + 1, i2, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
-							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+								this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+							} else {
+								this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							}
 						}
 					}
 					if(direction == 4) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2, i3 - 1) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
-							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+								this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+							} else {
+								this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							}
 						}
 					}
 					if(direction == 5) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2, i3 + 1) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
-							this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+								this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+							} else {
+								this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+							}
 						}
 					}
 				}
 
-			} else if(this.fallTime >= 21 /*&& !this.worldObj.multiplayerWorld*/ && this.blockID == mod_DumbStorage.magnetID) {
+			} else if(this.fallTime >= 21 /*&& !this.worldObj.multiplayerWorld*/ && this.blockID != mod_DumbStorage.snadStoneID || this.fallTime >= 21 && this.blockID == mod_DumbStorage.snadStoneID && direction != 0) {
 				//this.dropItem(this.blockID, 1);
 				this.setEntityDead();
-				this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+				if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+					this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+				} else {
+					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+				}
 			}
 			if(this.onGround) {
 				this.motionX *= (double)0.7F;
@@ -143,12 +171,20 @@ public class EntityFallingSand2 extends Entity {
 				}
 				if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockSand.canFallBelow(this.worldObj, i1, i2 - 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 					//this.dropItem(this.blockID, 1);
-					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+					if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+						this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+					} else {
+						this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+					}
 				}
-			} else if(this.fallTime >= 21 /*&& !this.worldObj.multiplayerWorld*/ && this.blockID == mod_DumbStorage.magnetID) {
+			} else if(this.fallTime >= 21 /*&& !this.worldObj.multiplayerWorld*/ && this.blockID != mod_DumbStorage.snadStoneID || this.fallTime >= 21 && this.blockID == mod_DumbStorage.snadStoneID && direction != 0) {
 				//this.dropItem(this.blockID, 1);
 				this.setEntityDead();
-				this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+				if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+					this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
+				} else {
+					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
+				}
 			}
 
 		}
