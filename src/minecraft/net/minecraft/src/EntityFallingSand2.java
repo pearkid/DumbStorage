@@ -10,12 +10,13 @@ public class EntityFallingSand2 extends Entity {
 	public byte direction;
 	public float splode;
 	public String texture = "/DumbStorageTextures/MissingTexture.png";
+	public int fat;
 
 	public EntityFallingSand2(World world1) {
 		super(world1);
 	}
 
-	public EntityFallingSand2(World world1, double d2, double d4, double d6, int i8, int i5, byte dir) {
+	public EntityFallingSand2(World world1, double d2, double d4, double d6, int i8, int i5, byte dir, int ft) {
 		super(world1);
 		this.blockID = i8;
 		this.preventEntitySpawning = true;
@@ -31,6 +32,7 @@ public class EntityFallingSand2 extends Entity {
 		thing = (byte) i5;
 		md = i5;
 		direction = dir;
+		fat = ft;
 	}
 
 	protected boolean canTriggerWalking() {
@@ -153,7 +155,7 @@ public class EntityFallingSand2 extends Entity {
 					}
 				}
 
-			} else if(this.fallTime >= 21 /*&& !this.worldObj.multiplayerWorld*/ && this.blockID != mod_DumbStorage.snadStoneID || this.fallTime >= 21 && this.blockID == mod_DumbStorage.snadStoneID && direction != 0) {
+			} else if(this.fallTime >= this.fat /*&& !this.worldObj.multiplayerWorld*/ && this.blockID != mod_DumbStorage.snadStoneID || this.fallTime >= 21 && this.blockID == mod_DumbStorage.snadStoneID && direction != 0) {
 				//this.dropItem(this.blockID, 1);
 				this.setEntityDead();
 				if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
@@ -177,10 +179,10 @@ public class EntityFallingSand2 extends Entity {
 						this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
 					}
 				}
-			} else if(this.fallTime >= 21 /*&& !this.worldObj.multiplayerWorld*/ && this.blockID != mod_DumbStorage.snadStoneID || this.fallTime >= 21 && this.blockID == mod_DumbStorage.snadStoneID && direction != 0) {
+			} else if(this.fallTime >= fat /*&& !this.worldObj.multiplayerWorld*/ && this.blockID != mod_DumbStorage.snadStoneID || this.fallTime >= 21 && this.blockID == mod_DumbStorage.snadStoneID && direction != 0) {
 				//this.dropItem(this.blockID, 1);
 				this.setEntityDead();
-				if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
+				if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID || this.blockID == Block.torchRedstoneActive.blockID || this.blockID == Block.torchRedstoneIdle.blockID || this.blockID == Block.torchWood.blockID) {
 					this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
 				} else {
 					this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing);
