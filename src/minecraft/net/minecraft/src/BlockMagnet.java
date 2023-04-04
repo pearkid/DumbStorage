@@ -354,48 +354,6 @@ public class BlockMagnet extends Block {
 			}
 			if (direction == 3) {
 				this.tryToSlide(world1, i2, i3, i4, this.blockID, dmg, (byte) 3);
-				/*bid1 = world1.getBlockId(i2 + 1, i3, i4);
-				bid2 = world1.getBlockId(i2 + 2, i3, i4);
-				bid3 = world1.getBlockId(i2 + 3, i3, i4);
-				bid4 = world1.getBlockId(i2 + 4, i3, i4);
-				bid5 = world1.getBlockId(i2 + 5, i3, i4);
-				bid6 = world1.getBlockId(i2 + 6, i3, i4);
-				bid7 = world1.getBlockId(i2 + 7, i3, i4);
-				bmd1 = (byte) world1.getBlockMetadata(i2 + 1, i3, i4);
-				bmd2 = (byte) world1.getBlockMetadata(i2 + 2, i3, i4);
-				bmd3 = (byte) world1.getBlockMetadata(i2 + 3, i3, i4);
-				bmd4 = (byte) world1.getBlockMetadata(i2 + 4, i3, i4);
-				bmd5 = (byte) world1.getBlockMetadata(i2 + 5, i3, i4);
-				bmd6 = (byte) world1.getBlockMetadata(i2 + 6, i3, i4);
-				bmd7 = (byte) world1.getBlockMetadata(i2 + 7, i3, i4);
-
-				if (bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonExtension.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.doorWood.blockID && bid1 != Block.doorSteel.blockID && bid1 != Block.trapdoor.blockID) {
-					this.tryToSlide(world1, i2 + 1, i3, i4, bid1, bmd1, (byte) 3);
-					if (bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonExtension.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.doorWood.blockID && bid2 != Block.doorSteel.blockID && bid2 != Block.trapdoor.blockID) {
-						world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
-						this.tryToSlide(world1, i2 + 2, i3, i4, bid2, bmd2, (byte) 3);
-						if (bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonExtension.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.doorWood.blockID && bid3 != Block.doorSteel.blockID && bid3 != Block.trapdoor.blockID) {
-							world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
-							this.tryToSlide(world1, i2 + 3, i3, i4, bid3, bmd3, (byte) 3);
-							if (bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonExtension.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.doorWood.blockID && bid4 != Block.doorSteel.blockID && bid4 != Block.trapdoor.blockID) {
-								world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
-								this.tryToSlide(world1, i2 + 4, i3, i4, bid4, bmd4, (byte) 3);
-								if (bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonExtension.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.doorWood.blockID && bid5 != Block.doorSteel.blockID && bid5 != Block.trapdoor.blockID) {
-									world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
-									this.tryToSlide(world1, i2 + 5, i3, i4, bid5, bmd5, (byte) 3);
-									if (bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonExtension.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.doorWood.blockID && bid6 != Block.doorSteel.blockID && bid6 != Block.trapdoor.blockID) {
-										world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
-										this.tryToSlide(world1, i2 + 6, i3, i4, bid6, bmd6, (byte) 3);
-										if (bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonExtension.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.doorWood.blockID && bid7 != Block.doorSteel.blockID && bid7 != Block.trapdoor.blockID) {
-											world1.scheduleBlockUpdate(i2, i3, i4, this.blockID, this.tickRate());
-											this.tryToSlide(world1, i2 + 7, i3, i4, bid7, bmd7, (byte) 3);
-										}
-									}
-								}
-							}
-						}
-					}
-				} */
 			}
 
 			if (direction == 4) {
