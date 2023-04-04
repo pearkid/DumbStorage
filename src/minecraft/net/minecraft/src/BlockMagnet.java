@@ -995,29 +995,53 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2, i3 - 2, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 - 3, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 - 4, i4) && i3 >= 0|| canFallBelow(world1, i2, i3 - 5, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 - 6, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 - 7, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 - 8, i4) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
 							bs1 = false;
 						} else {
 							bs1 = true;
 						}
 					}
 					if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.chest.blockID && bid2 != Block.pistonExtension.blockID){
-						bs2 = true;
+						if(bid2 == Block.pistonExtension.blockID|| bid2 == Block.pistonBase.blockID && bmd2 >= 6 || bid2 == Block.pistonStickyBase.blockID && bmd2 >= 6 || bid2 == Block.blockBed.blockID) {
+							bs2 = false;
+						} else {
+							bs2 = true;
+						}
 					}
 					if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.chest.blockID && bid3 != Block.pistonExtension.blockID){
-						bs3 = true;
+						if(bid3 == Block.pistonExtension.blockID|| bid3 == Block.pistonBase.blockID && bmd3 >= 6 || bid3 == Block.pistonStickyBase.blockID && bmd3 >= 6 || bid3 == Block.blockBed.blockID) {
+							bs3 = false;
+						} else {
+							bs3 = true;
+						}
 					}
 					if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.chest.blockID && bid4 != Block.pistonExtension.blockID){
-						bs4 = true;
+						if(bid4 == Block.pistonExtension.blockID|| bid4 == Block.pistonBase.blockID && bmd4 >= 6 || bid4 == Block.pistonStickyBase.blockID && bmd4 >= 6 || bid4 == Block.blockBed.blockID) {
+							bs4 = false;
+						} else {
+							bs4 = true;
+						}
 					}
 					if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.chest.blockID && bid5 != Block.pistonExtension.blockID){
-						bs5 = true;
+						if(bid5 == Block.pistonExtension.blockID|| bid5 == Block.pistonBase.blockID && bmd5 >= 6 || bid5 == Block.pistonStickyBase.blockID && bmd5 >= 6 || bid5 == Block.blockBed.blockID) {
+							bs5 = false;
+						} else {
+							bs5 = true;
+						}
 					}
 					if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.chest.blockID && bid6 != Block.pistonExtension.blockID){
-						bs6 = true;
+						if(bid6 == Block.pistonExtension.blockID|| bid6 == Block.pistonBase.blockID && bmd6 >= 6 || bid6 == Block.pistonStickyBase.blockID && bmd6 >= 6 || bid6 == Block.blockBed.blockID) {
+							bs6 = false;
+						} else {
+							bs6 = true;
+						}
 					}
 					if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.chest.blockID && bid7 != Block.pistonExtension.blockID){
-						bs7 = true;
+						if(bid7 == Block.pistonExtension.blockID|| bid7 == Block.pistonBase.blockID && bmd7 >= 6 || bid7 == Block.pistonStickyBase.blockID && bmd7 >= 6 || bid7 == Block.blockBed.blockID) {
+							bs7 = false;
+						} else {
+							bs7 = true;
+						}
 					}
 				}
 
@@ -1131,29 +1155,49 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2, i3 + 2, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 3, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 4, i4) && i3 >= 0|| canFallBelow(world1, i2, i3 + 5, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 6, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 7, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 8, i4) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 6) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
 							bs1 = false;
 						} else {
 							bs1 = true;
 						}
 					}
 					if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.chest.blockID && bid2 != Block.pistonExtension.blockID){
-						bs2 = true;
+						if(bid2 == Block.pistonExtension.blockID|| bid2 == Block.pistonBase.blockID && bmd2 >= 6 || bid2 == Block.pistonStickyBase.blockID && bmd2 >= 6 || bid2 == Block.blockBed.blockID) {
+							bs2 = false;
+						} else {
+							bs2 = true;
+						}
 					}
 					if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.chest.blockID && bid3 != Block.pistonExtension.blockID){
-						bs3 = true;
+						if(bid3 == Block.pistonExtension.blockID|| bid3 == Block.pistonBase.blockID && bmd3 >= 6 || bid3 == Block.pistonStickyBase.blockID && bmd3 >= 6 || bid3 == Block.blockBed.blockID) {
+							bs3 = false;
+						} else {
+							bs3 = true;
+						}
 					}
 					if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.chest.blockID && bid4 != Block.pistonExtension.blockID){
-						bs4 = true;
+						if(bid4 == Block.pistonExtension.blockID|| bid4 == Block.pistonBase.blockID && bmd4 >= 6 || bid4 == Block.pistonStickyBase.blockID && bmd4 >= 6 || bid4 == Block.blockBed.blockID) {
+							bs4 = false;
+						} else {
+							bs4 = true;
+						}
 					}
 					if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.chest.blockID && bid5 != Block.pistonExtension.blockID){
 						bs5 = true;
 					}
 					if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.chest.blockID && bid6 != Block.pistonExtension.blockID){
-						bs6 = true;
+						if(bid6 == Block.pistonExtension.blockID|| bid6 == Block.pistonBase.blockID && bmd6 >= 6 || bid6 == Block.pistonStickyBase.blockID && bmd6 >= 6 || bid6 == Block.blockBed.blockID) {
+							bs6 = false;
+						} else {
+							bs6 = true;
+						}
 					}
 					if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.chest.blockID && bid7 != Block.pistonExtension.blockID){
-						bs7 = true;
+						if(bid7 == Block.pistonExtension.blockID|| bid7 == Block.pistonBase.blockID && bmd7 >= 6 || bid7 == Block.pistonStickyBase.blockID && bmd7 >= 6 || bid7 == Block.blockBed.blockID) {
+							bs7 = false;
+						} else {
+							bs7 = true;
+						}
 					}
 				}
 
@@ -1267,29 +1311,53 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2 - 2, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 3, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 4, i3, i4) && i3 >= 0|| canFallBelow(world1, i2 - 5, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 6, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 7, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 8, i3, i4) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
 							bs1 = false;
 						} else {
 							bs1 = true;
 						}
 					}
 					if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.chest.blockID && bid2 != Block.pistonExtension.blockID){
-						bs2 = true;
+						if(bid2 == Block.pistonExtension.blockID|| bid2 == Block.pistonBase.blockID && bmd2 >= 6 || bid2 == Block.pistonStickyBase.blockID && bmd2 >= 6 || bid2 == Block.blockBed.blockID) {
+							bs2 = false;
+						} else {
+							bs2 = true;
+						}
 					}
 					if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.chest.blockID && bid3 != Block.pistonExtension.blockID){
-						bs3 = true;
+						if(bid3 == Block.pistonExtension.blockID|| bid3 == Block.pistonBase.blockID && bmd3 >= 6 || bid3 == Block.pistonStickyBase.blockID && bmd3 >= 6 || bid3 == Block.blockBed.blockID) {
+							bs3 = false;
+						} else {
+							bs3 = true;
+						}
 					}
 					if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.chest.blockID && bid4 != Block.pistonExtension.blockID){
-						bs4 = true;
+						if(bid4 == Block.pistonExtension.blockID|| bid4 == Block.pistonBase.blockID && bmd4 >= 6 || bid4 == Block.pistonStickyBase.blockID && bmd4 >= 6 || bid4 == Block.blockBed.blockID) {
+							bs4 = false;
+						} else {
+							bs4 = true;
+						}
 					}
 					if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.chest.blockID && bid5 != Block.pistonExtension.blockID){
-						bs5 = true;
+						if(bid5 == Block.pistonExtension.blockID|| bid5 == Block.pistonBase.blockID && bmd5 >= 6 || bid5 == Block.pistonStickyBase.blockID && bmd5 >= 6 || bid5 == Block.blockBed.blockID) {
+							bs5 = false;
+						} else {
+							bs5 = true;
+						}
 					}
 					if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.chest.blockID && bid6 != Block.pistonExtension.blockID){
-						bs6 = true;
+						if(bid6 == Block.pistonExtension.blockID|| bid6 == Block.pistonBase.blockID && bmd6 >= 6 || bid6 == Block.pistonStickyBase.blockID && bmd6 >= 6 || bid6 == Block.blockBed.blockID) {
+							bs6 = false;
+						} else {
+							bs6 = true;
+						}
 					}
 					if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.chest.blockID && bid7 != Block.pistonExtension.blockID){
-						bs7 = true;
+						if(bid7 == Block.pistonExtension.blockID|| bid7 == Block.pistonBase.blockID && bmd7 >= 6 || bid7 == Block.pistonStickyBase.blockID && bmd7 >= 6 || bid7 == Block.blockBed.blockID) {
+							bs7 = false;
+						} else {
+							bs7 = true;
+						}
 					}
 				}
 
@@ -1402,29 +1470,53 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2 + 2, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 + 3, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 + 4, i3, i4) && i3 >= 0|| canFallBelow(world1, i2 + 5, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 + 6, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 + 7, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 + 8, i3, i4) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
 							bs1 = false;
 						} else {
 							bs1 = true;
 						}
 					}
 					if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.chest.blockID && bid2 != Block.pistonExtension.blockID){
-						bs2 = true;
+						if(bid2 == Block.pistonExtension.blockID|| bid2 == Block.pistonBase.blockID && bmd2 >= 6 || bid2 == Block.pistonStickyBase.blockID && bmd2 >= 6 || bid2 == Block.blockBed.blockID) {
+							bs2 = false;
+						} else {
+							bs2 = true;
+						}
 					}
 					if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.chest.blockID && bid3 != Block.pistonExtension.blockID){
-						bs3 = true;
+						if(bid3 == Block.pistonExtension.blockID|| bid3 == Block.pistonBase.blockID && bmd3 >= 6 || bid3 == Block.pistonStickyBase.blockID && bmd3 >= 6 || bid3 == Block.blockBed.blockID) {
+							bs3 = false;
+						} else {
+							bs3 = true;
+						}
 					}
 					if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.chest.blockID && bid4 != Block.pistonExtension.blockID){
-						bs4 = true;
+						if(bid4 == Block.pistonExtension.blockID|| bid4 == Block.pistonBase.blockID && bmd4 >= 6 || bid4 == Block.pistonStickyBase.blockID && bmd4 >= 6 || bid4 == Block.blockBed.blockID) {
+							bs4 = false;
+						} else {
+							bs4 = true;
+						}
 					}
 					if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.chest.blockID && bid5 != Block.pistonExtension.blockID){
-						bs5 = true;
+						if(bid5 == Block.pistonExtension.blockID|| bid5 == Block.pistonBase.blockID && bmd5 >= 6 || bid5 == Block.pistonStickyBase.blockID && bmd5 >= 6 || bid5 == Block.blockBed.blockID) {
+							bs5 = false;
+						} else {
+							bs5 = true;
+						}
 					}
 					if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.chest.blockID && bid6 != Block.pistonExtension.blockID){
-						bs6 = true;
+						if(bid6 == Block.pistonExtension.blockID|| bid6 == Block.pistonBase.blockID && bmd6 >= 6 || bid6 == Block.pistonStickyBase.blockID && bmd6 >= 6 || bid6 == Block.blockBed.blockID) {
+							bs6 = false;
+						} else {
+							bs6 = true;
+						}
 					}
 					if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.chest.blockID && bid7 != Block.pistonExtension.blockID){
-						bs7 = true;
+						if(bid7 == Block.pistonExtension.blockID|| bid7 == Block.pistonBase.blockID && bmd7 >= 6 || bid7 == Block.pistonStickyBase.blockID && bmd7 >= 6 || bid7 == Block.blockBed.blockID) {
+							bs7 = false;
+						} else {
+							bs7 = true;
+						}
 					}
 				}
 
@@ -1537,29 +1629,53 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2, i3, i4 - 2) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 - 3) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 - 4) && i3 >= 0|| canFallBelow(world1, i2, i3, i4 - 5) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 - 6) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 - 7) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 - 8) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 7) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
 							bs1 = false;
 						} else {
 							bs1 = true;
 						}
 					}
 					if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.chest.blockID && bid2 != Block.pistonExtension.blockID){
-						bs2 = true;
+						if(bid2 == Block.pistonExtension.blockID|| bid2 == Block.pistonBase.blockID && bmd2 >= 6 || bid2 == Block.pistonStickyBase.blockID && bmd2 >= 6 || bid2 == Block.blockBed.blockID) {
+							bs2 = false;
+						} else {
+							bs2 = true;
+						}
 					}
 					if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.chest.blockID && bid3 != Block.pistonExtension.blockID){
-						bs3 = true;
+						if(bid3 == Block.pistonExtension.blockID|| bid3 == Block.pistonBase.blockID && bmd3 >= 6 || bid3 == Block.pistonStickyBase.blockID && bmd3 >= 6 || bid3 == Block.blockBed.blockID) {
+							bs3 = false;
+						} else {
+							bs3 = true;
+						}
 					}
 					if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.chest.blockID && bid4 != Block.pistonExtension.blockID){
-						bs4 = true;
+						if(bid4 == Block.pistonExtension.blockID|| bid4 == Block.pistonBase.blockID && bmd4 >= 6 || bid4 == Block.pistonStickyBase.blockID && bmd4 >= 6 || bid4 == Block.blockBed.blockID) {
+							bs4 = false;
+						} else {
+							bs4 = true;
+						}
 					}
 					if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.chest.blockID && bid5 != Block.pistonExtension.blockID){
-						bs5 = true;
+						if(bid5 == Block.pistonExtension.blockID|| bid5 == Block.pistonBase.blockID && bmd5 >= 6 || bid5 == Block.pistonStickyBase.blockID && bmd5 >= 6 || bid5 == Block.blockBed.blockID) {
+							bs5 = false;
+						} else {
+							bs5 = true;
+						}
 					}
 					if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.chest.blockID && bid6 != Block.pistonExtension.blockID){
-						bs6 = true;
+						if(bid6 == Block.pistonExtension.blockID|| bid6 == Block.pistonBase.blockID && bmd6 >= 6 || bid6 == Block.pistonStickyBase.blockID && bmd6 >= 6 || bid6 == Block.blockBed.blockID) {
+							bs6 = false;
+						} else {
+							bs6 = true;
+						}
 					}
 					if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.chest.blockID && bid7 != Block.pistonExtension.blockID){
-						bs7 = true;
+						if(bid7 == Block.pistonExtension.blockID|| bid7 == Block.pistonBase.blockID && bmd7 >= 6 || bid7 == Block.pistonStickyBase.blockID && bmd7 >= 6 || bid7 == Block.blockBed.blockID) {
+							bs7 = false;
+						} else {
+							bs7 = true;
+						}
 					}
 				}
 
@@ -1671,29 +1787,53 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2, i3, i4 + 2) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 + 3) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 + 4) && i3 >= 0|| canFallBelow(world1, i2, i3, i4 + 5) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 + 6) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 + 7) && i3 >= 0 || canFallBelow(world1, i2, i3, i4 + 8) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 7) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
 							bs1 = false;
 						} else {
 							bs1 = true;
 						}
 					}
 					if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.chest.blockID && bid2 != Block.pistonExtension.blockID){
-						bs2 = true;
+						if(bid2 == Block.pistonExtension.blockID|| bid2 == Block.pistonBase.blockID && bmd2 >= 6 || bid2 == Block.pistonStickyBase.blockID && bmd2 >= 6 || bid2 == Block.blockBed.blockID) {
+							bs2 = false;
+						} else {
+							bs2 = true;
+						}
 					}
 					if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.chest.blockID && bid3 != Block.pistonExtension.blockID){
-						bs3 = true;
+						if(bid3 == Block.pistonExtension.blockID|| bid3 == Block.pistonBase.blockID && bmd3 >= 6 || bid3 == Block.pistonStickyBase.blockID && bmd3 >= 6 || bid3 == Block.blockBed.blockID) {
+							bs3 = false;
+						} else {
+							bs3 = true;
+						}
 					}
 					if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.chest.blockID && bid4 != Block.pistonExtension.blockID){
-						bs4 = true;
+						if(bid4 == Block.pistonExtension.blockID|| bid4 == Block.pistonBase.blockID && bmd4 >= 6 || bid4 == Block.pistonStickyBase.blockID && bmd4 >= 6 || bid4 == Block.blockBed.blockID) {
+							bs4 = false;
+						} else {
+							bs4 = true;
+						}
 					}
 					if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.chest.blockID && bid5 != Block.pistonExtension.blockID){
-						bs5 = true;
+						if(bid5 == Block.pistonExtension.blockID|| bid5 == Block.pistonBase.blockID && bmd5 >= 6 || bid5 == Block.pistonStickyBase.blockID && bmd5 >= 6 || bid5 == Block.blockBed.blockID) {
+							bs5 = false;
+						} else {
+							bs5 = true;
+						}
 					}
 					if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.chest.blockID && bid6 != Block.pistonExtension.blockID){
-						bs6 = true;
+						if(bid6 == Block.pistonExtension.blockID|| bid6 == Block.pistonBase.blockID && bmd6 >= 6 || bid6 == Block.pistonStickyBase.blockID && bmd6 >= 6 || bid6 == Block.blockBed.blockID) {
+							bs6 = false;
+						} else {
+							bs6 = true;
+						}
 					}
 					if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.chest.blockID && bid7 != Block.pistonExtension.blockID){
-						bs7 = true;
+						if(bid7 == Block.pistonExtension.blockID|| bid7 == Block.pistonBase.blockID && bmd7 >= 6 || bid7 == Block.pistonStickyBase.blockID && bmd7 >= 6 || bid7 == Block.blockBed.blockID) {
+							bs7 = false;
+						} else {
+							bs7 = true;
+						}
 					}
 				}
 
