@@ -613,7 +613,7 @@ public class BlockMagnet extends Block {
 			}
 		}
 		if(world1.checkChunksExist(i2 - b8, i3 - b8, i4 - b8, i2 + b8, i3 + b8, i4 + b8)) {
-			if(bid == mod_DumbStorage.magnetID && damage == 4 && direction == 0 || bid == mod_DumbStorage.magnetID && damage == 6 && direction == 0) {
+			if(bid == mod_DumbStorage.magnetID && damage == 4 && direction == 1 || bid == mod_DumbStorage.magnetID && damage == 6 && direction == 1) {
 				bid1 = world1.getBlockId(i2, i3 + 1, i4);
 				bid2 = world1.getBlockId(i2, i3 + 2, i4);
 				bid3 = world1.getBlockId(i2, i3 + 3, i4);
