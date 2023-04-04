@@ -29,10 +29,10 @@ public class EntityFallingSand2 extends Entity {
 		this.prevPosX = d2;
 		this.prevPosY = d4;
 		this.prevPosZ = d6;
-		thing = (byte) i5;
-		md = i5;
-		direction = dir;
-		fat = ft;
+		this.thing = (byte) i5;
+		this.md = i5;
+		this.direction = dir;
+		this.fat = ft;
 	}
 
 	protected boolean canTriggerWalking() {
@@ -76,6 +76,26 @@ public class EntityFallingSand2 extends Entity {
 			int i1 = MathHelper.floor_double(this.posX);
 			int i2 = MathHelper.floor_double(this.posY);
 			int i3 = MathHelper.floor_double(this.posZ);
+			switch(direction){
+				case 0: if(worldObj.getBlockId(i1, i2 - 1, i3) == Block.torchRedstoneActive.blockID || worldObj.getBlockId(i1, i2 - 1, i3) == Block.torchRedstoneIdle.blockID || worldObj.getBlockId(i1, i2 - 1, i3) == Block.torchWood.blockID){
+					worldObj.setBlock(i1, i2 - 1, i3, 0);
+				} break;
+				case 1: if(worldObj.getBlockId(i1, i2 + 1, i3) == Block.torchRedstoneActive.blockID || worldObj.getBlockId(i1, i2 + 1, i3) == Block.torchRedstoneIdle.blockID || worldObj.getBlockId(i1, i2 + 1, i3) == Block.torchWood.blockID){
+					worldObj.setBlock(i1, i2 + 1, i3, 0);
+				} break;
+				case 2: if(worldObj.getBlockId(i1 - 1, i2, i3) == Block.torchRedstoneActive.blockID || worldObj.getBlockId(i1 - 1, i2, i3) == Block.torchRedstoneIdle.blockID || worldObj.getBlockId(i1 - 1, i2, i3) == Block.torchWood.blockID){
+					worldObj.setBlock(i1 - 1, i2, i3, 0);
+				} break;
+				case 3: if(worldObj.getBlockId(i1 + 1, i2, i3) == Block.torchRedstoneActive.blockID || worldObj.getBlockId(i1 + 1, i2, i3) == Block.torchRedstoneIdle.blockID || worldObj.getBlockId(i1 + 1, i2, i3) == Block.torchWood.blockID){
+					worldObj.setBlock(i1 + 1, i2, i3, 0);
+				} break;
+				case 4: if(worldObj.getBlockId(i1, i2, i3 - 1) == Block.torchRedstoneActive.blockID || worldObj.getBlockId(i1, i2, i3 - 1) == Block.torchRedstoneIdle.blockID || worldObj.getBlockId(i1, i2, i3 - 1) == Block.torchWood.blockID){
+					worldObj.setBlock(i1, i2, i3 - 1, 0);
+				} break;
+				case 5: if(worldObj.getBlockId(i1, i2, i3 + 1) == Block.torchRedstoneActive.blockID || worldObj.getBlockId(i1, i2, i3 + 1) == Block.torchRedstoneIdle.blockID || worldObj.getBlockId(i1, i2, i3 + 1) == Block.torchWood.blockID){
+					worldObj.setBlock(i1, i2, i3 + 1, 0);
+				} break;
+			}
 			if(this.worldObj.getBlockId(i1, i2, i3) == this.blockID) {
 				this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, 0, 0);
 			}
@@ -106,6 +126,12 @@ public class EntityFallingSand2 extends Entity {
 					if(direction == 1) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2 + 1, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
+							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID && this.blockID != Block.stairSingle.blockID) {
+								splode = 2F;
+							} else {
+								splode = 0.1F;
+							}
+							this.worldObj.createExplosion((Entity)null, i1, i2, i3, splode);
 							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
 
 							} else {
@@ -116,6 +142,12 @@ public class EntityFallingSand2 extends Entity {
 					if(direction == 2) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1 - 1, i2, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
+							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID && this.blockID != Block.stairSingle.blockID) {
+								splode = 2F;
+							} else {
+								splode = 0.1F;
+							}
+							this.worldObj.createExplosion((Entity)null, i1, i2, i3, splode);
 							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
 
 							} else {
@@ -126,6 +158,12 @@ public class EntityFallingSand2 extends Entity {
 					if(direction == 3) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1 + 1, i2, i3) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
+							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID && this.blockID != Block.stairSingle.blockID) {
+								splode = 2F;
+							} else {
+								splode = 0.1F;
+							}
+							this.worldObj.createExplosion((Entity)null, i1, i2, i3, splode);
 							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
 
 							} else {
@@ -136,6 +174,12 @@ public class EntityFallingSand2 extends Entity {
 					if(direction == 4) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2, i3 - 1) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
+							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID && this.blockID != Block.stairSingle.blockID) {
+								splode = 2F;
+							} else {
+								splode = 0.1F;
+							}
+							this.worldObj.createExplosion((Entity)null, i1, i2, i3, splode);
 							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
 
 							} else {
@@ -146,6 +190,12 @@ public class EntityFallingSand2 extends Entity {
 					if(direction == 5) {
 						if((!this.worldObj.canBlockBePlacedAt(this.blockID, i1, i2, i3, true, 1) || BlockMagnet.canFallAbove(this.worldObj, i1, i2, i3 + 1) || !this.worldObj.setBlockAndMetadataWithNotify(i1, i2, i3, this.blockID, thing)) && !this.worldObj.multiplayerWorld) {
 							//this.dropItem(this.blockID, 1);
+							if(this.worldObj.getBlockId(i1, i2, i3) == Block.stairSingle.blockID && this.blockID != Block.stairSingle.blockID) {
+								splode = 2F;
+							} else {
+								splode = 0.1F;
+							}
+							this.worldObj.createExplosion((Entity)null, i1, i2, i3, splode);
 							if (this.blockID == Block.redstoneWire.blockID || this.blockID == Block.redstoneRepeaterActive.blockID || this.blockID == Block.redstoneRepeaterIdle.blockID) {
 
 							} else {
@@ -189,7 +239,8 @@ public class EntityFallingSand2 extends Entity {
 						}
 						if(this.blockID == Block.torchRedstoneIdle.blockID || this.blockID == Block.torchRedstoneActive.blockID) {
 							if(!this.worldObj.canBlockBePlacedAt(Block.torchRedstoneActive.blockID, i1, i2, i3, true, this.thing) && this.worldObj.getBlockId(i1, i2, i3) != this.blockID) {
-								this.dropItem(Block.torchRedstoneActive.blockID, 1);
+								//this.dropItem(Block.torchRedstoneActive.blockID, 1);
+								this.worldObj.setBlockWithNotify(i1, i2, i3, 0);
 							}
 						}
 						if(this.blockID == Block.redstoneRepeaterIdle.blockID || this.blockID == Block.redstoneRepeaterActive.blockID) {

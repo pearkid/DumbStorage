@@ -1267,7 +1267,7 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2 - 2, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 3, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 4, i3, i4) && i3 >= 0|| canFallBelow(world1, i2 - 5, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 6, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 7, i3, i4) && i3 >= 0 || canFallBelow(world1, i2 - 8, i3, i4) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 6) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5) {
 							bs1 = false;
 						} else {
 							bs1 = true;
