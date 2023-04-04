@@ -612,7 +612,142 @@ public class BlockMagnet extends Block {
 
 			}
 		}
+		if(world1.checkChunksExist(i2 - b8, i3 - b8, i4 - b8, i2 + b8, i3 + b8, i4 + b8)) {
+			if(bid == mod_DumbStorage.magnetID && damage == 4 && direction == 0 || bid == mod_DumbStorage.magnetID && damage == 6 && direction == 0) {
+				bid1 = world1.getBlockId(i2, i3 + 1, i4);
+				bid2 = world1.getBlockId(i2, i3 + 2, i4);
+				bid3 = world1.getBlockId(i2, i3 + 3, i4);
+				bid4 = world1.getBlockId(i2, i3 + 4, i4);
+				bid5 = world1.getBlockId(i2, i3 + 5, i4);
+				bid6 = world1.getBlockId(i2, i3 + 6, i4);
+				bid7 = world1.getBlockId(i2, i3 + 7, i4);
+				bid8 = world1.getBlockId(i2, i3 + 8, i4);
+				bmd1 = (byte) world1.getBlockMetadata(i2, i3 + 1, i4);
+				bmd2 = (byte) world1.getBlockMetadata(i2, i3 + 2, i4);
+				bmd3 = (byte) world1.getBlockMetadata(i2, i3 + 3, i4);
+				bmd4 = (byte) world1.getBlockMetadata(i2, i3 + 4, i4);
+				bmd5 = (byte) world1.getBlockMetadata(i2, i3 + 5, i4);
+				bmd6 = (byte) world1.getBlockMetadata(i2, i3 + 6, i4);
+				bmd7 = (byte) world1.getBlockMetadata(i2, i3 + 7, i4);
+				bs1 = false;
+				bs2 = false;
+				bs3 = false;
+				bs4 = false;
+				bs5 = false;
+				bs6 = false;
+				bs7 = false;
 
+
+				if(canFallBelow(world1, i2, i3 + 2, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 3, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 4, i4) && i3 >= 0|| canFallBelow(world1, i2, i3 + 5, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 6, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 7, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 8, i4) && i3 >= 0) {
+					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
+						if(bid2 == mod_DumbStorage.magnetID && bmd1 == 4 || bid2 == mod_DumbStorage.magnetID && bmd1 == 6) {
+							bs1 = false;
+						} else {
+							bs1 = true;
+						}
+					}
+					if(bid2 != 0 && bid2 != Block.dispenser.blockID && bid2 != Block.pistonMoving.blockID && bid2 != Block.blockSteel.blockID && bid2 != Block.obsidian.blockID && bid2 != Block.mobSpawner.blockID && bid2 != Block.stoneOvenIdle.blockID && bid2 != Block.stoneOvenActive.blockID && bid2 != Block.chest.blockID && bid2 != Block.pistonExtension.blockID){
+						bs2 = true;
+					}
+					if(bid3 != 0 && bid3 != Block.dispenser.blockID && bid3 != Block.pistonMoving.blockID && bid3 != Block.blockSteel.blockID && bid3 != Block.obsidian.blockID && bid3 != Block.mobSpawner.blockID && bid3 != Block.stoneOvenIdle.blockID && bid3 != Block.stoneOvenActive.blockID && bid3 != Block.chest.blockID && bid3 != Block.pistonExtension.blockID){
+						bs3 = true;
+					}
+					if(bid4 != 0 && bid4 != Block.dispenser.blockID && bid4 != Block.pistonMoving.blockID && bid4 != Block.blockSteel.blockID && bid4 != Block.obsidian.blockID && bid4 != Block.mobSpawner.blockID && bid4 != Block.stoneOvenIdle.blockID && bid4 != Block.stoneOvenActive.blockID && bid4 != Block.chest.blockID && bid4 != Block.pistonExtension.blockID){
+						bs4 = true;
+					}
+					if(bid5 != 0 && bid5 != Block.dispenser.blockID && bid5 != Block.pistonMoving.blockID && bid5 != Block.blockSteel.blockID && bid5 != Block.obsidian.blockID && bid5 != Block.mobSpawner.blockID && bid5 != Block.stoneOvenIdle.blockID && bid5 != Block.stoneOvenActive.blockID && bid5 != Block.chest.blockID && bid5 != Block.pistonExtension.blockID){
+						bs5 = true;
+					}
+					if(bid6 != 0 && bid6 != Block.dispenser.blockID && bid6 != Block.pistonMoving.blockID && bid6 != Block.blockSteel.blockID && bid6 != Block.obsidian.blockID && bid6 != Block.mobSpawner.blockID && bid6 != Block.stoneOvenIdle.blockID && bid6 != Block.stoneOvenActive.blockID && bid6 != Block.chest.blockID && bid6 != Block.pistonExtension.blockID){
+						bs6 = true;
+					}
+					if(bid7 != 0 && bid7 != Block.dispenser.blockID && bid7 != Block.pistonMoving.blockID && bid7 != Block.blockSteel.blockID && bid7 != Block.obsidian.blockID && bid7 != Block.mobSpawner.blockID && bid7 != Block.stoneOvenIdle.blockID && bid7 != Block.stoneOvenActive.blockID && bid7 != Block.chest.blockID && bid7 != Block.pistonExtension.blockID){
+						bs7 = true;
+					}
+				}
+
+				if (bs7 && bs6 && bs5 && bs4 && bs3 && bs2 && bs1 && canFallBelow(world1, i2, i3 + 8, i4) && i3 >= 0) {
+					EntityFallingSand2 moving7 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 7.5F), (double)((float)i4 + 0.5F), bid7, bmd7, direction);
+					world1.entityJoinedWorld(moving7);
+					EntityFallingSand2 moving6 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 6.5F), (double)((float)i4 + 0.5F), bid6, bmd6, direction);
+					world1.entityJoinedWorld(moving6);
+					EntityFallingSand2 moving5 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 5.5F), (double)((float)i4 + 0.5F), bid5, bmd5, direction);
+					world1.entityJoinedWorld(moving5);
+					EntityFallingSand2 moving4 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 4.5F), (double)((float)i4 + 0.5F), bid4, bmd4, direction);
+					world1.entityJoinedWorld(moving4);
+					EntityFallingSand2 moving3 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 3.5F), (double)((float)i4 + 0.5F), bid3, bmd3, direction);
+					world1.entityJoinedWorld(moving3);
+					EntityFallingSand2 moving2 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 2.5F), (double)((float)i4 + 0.5F), bid2, bmd2, direction);
+					world1.entityJoinedWorld(moving2);
+					EntityFallingSand2 moving1 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 1.5F), (double)((float)i4 + 0.5F), bid1, bmd1, direction);
+					world1.entityJoinedWorld(moving1);
+					EntityFallingSand2 moving = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
+					world1.entityJoinedWorld(moving);
+				} else if (bs6 && bs5 && bs4 && bs3 && bs2 && bs1 && canFallBelow(world1, i2, i3 + 7, i4) && i3 >= 0) {
+					EntityFallingSand2 moving6 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 6.5F), (double)((float)i4 + 0.5F), bid6, bmd6, direction);
+					world1.entityJoinedWorld(moving6);
+					EntityFallingSand2 moving5 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 5.5F), (double)((float)i4 + 0.5F), bid5, bmd5, direction);
+					world1.entityJoinedWorld(moving5);
+					EntityFallingSand2 moving4 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 4.5F), (double)((float)i4 + 0.5F), bid4, bmd4, direction);
+					world1.entityJoinedWorld(moving4);
+					EntityFallingSand2 moving3 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 3.5F), (double)((float)i4 + 0.5F), bid3, bmd3, direction);
+					world1.entityJoinedWorld(moving3);
+					EntityFallingSand2 moving2 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 2.5F), (double)((float)i4 + 0.5F), bid2, bmd2, direction);
+					world1.entityJoinedWorld(moving2);
+					EntityFallingSand2 moving1 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 1.5F), (double)((float)i4 + 0.5F), bid1, bmd1, direction);
+					world1.entityJoinedWorld(moving1);
+					EntityFallingSand2 moving = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
+					world1.entityJoinedWorld(moving);
+				} else if ( bs5 && bs4 && bs3 && bs2 && bs1 && canFallBelow(world1, i2, i3 + 6, i4) && i3 >= 0) {
+					EntityFallingSand2 moving5 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 5.5F), (double)((float)i4 + 0.5F), bid5, bmd5, direction);
+					world1.entityJoinedWorld(moving5);
+					EntityFallingSand2 moving4 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 4.5F), (double)((float)i4 + 0.5F), bid4, bmd4, direction);
+					world1.entityJoinedWorld(moving4);
+					EntityFallingSand2 moving3 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 3.5F), (double)((float)i4 + 0.5F), bid3, bmd3, direction);
+					world1.entityJoinedWorld(moving3);
+					EntityFallingSand2 moving2 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 2.5F), (double)((float)i4 + 0.5F), bid2, bmd2, direction);
+					world1.entityJoinedWorld(moving2);
+					EntityFallingSand2 moving1 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 1.5F), (double)((float)i4 + 0.5F), bid1, bmd1, direction);
+					world1.entityJoinedWorld(moving1);
+					EntityFallingSand2 moving = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
+					world1.entityJoinedWorld(moving);
+				} else if (bs4 && bs3 && bs2 && bs1 && canFallBelow(world1, i2, i3 + 5, i4) && i3 >= 0) {
+					EntityFallingSand2 moving4 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 4.5F), (double)((float)i4 + 0.5F), bid4, bmd4, direction);
+					world1.entityJoinedWorld(moving4);
+					world1.setBlockWithNotify(i2, i3 - 4, i4, 0);
+					EntityFallingSand2 moving3 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 3.5F), (double)((float)i4 + 0.5F), bid3, bmd3, direction);
+					world1.entityJoinedWorld(moving3);
+					EntityFallingSand2 moving2 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 2.5F), (double)((float)i4 + 0.5F), bid2, bmd2, direction);
+					world1.entityJoinedWorld(moving2);
+					EntityFallingSand2 moving1 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 1.5F), (double)((float)i4 + 0.5F), bid1, bmd1, direction);
+					world1.entityJoinedWorld(moving1);
+					EntityFallingSand2 moving = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
+					world1.entityJoinedWorld(moving);
+				} else if (bs3 && bs2 && bs1 && canFallBelow(world1, i2, i3 + 4, i4) && i3 >= 0) {
+					EntityFallingSand2 moving3 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 3.5F), (double)((float)i4 + 0.5F), bid3, bmd3, direction);
+					world1.entityJoinedWorld(moving3);
+					EntityFallingSand2 moving2 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 2.5F), (double)((float)i4 + 0.5F), bid2, bmd2, direction);
+					world1.entityJoinedWorld(moving2);
+					EntityFallingSand2 moving1 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 1.5F), (double)((float)i4 + 0.5F), bid1, bmd1, direction);
+					world1.entityJoinedWorld(moving1);
+					EntityFallingSand2 moving = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
+					world1.entityJoinedWorld(moving);
+				} else if (bs2 == true && bs1 == true && canFallBelow(world1, i2, i3 + 3, i4) && i3 >= 0) {
+					EntityFallingSand2 moving2 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 2.5F), (double)((float)i4 + 0.5F), bid2, bmd2, direction);
+					world1.entityJoinedWorld(moving2);
+					EntityFallingSand2 moving1 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 1.5F), (double)((float)i4 + 0.5F), bid1, bmd1, direction);
+					world1.entityJoinedWorld(moving1);
+					EntityFallingSand2 moving = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
+					world1.entityJoinedWorld(moving);
+				} else if(bs1 == true && canFallBelow(world1, i2, i3 + 2, i4) && i3 >= 0) {
+					EntityFallingSand2 moving1 = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 1.5F), (double)((float)i4 + 0.5F), bid1, bmd1, direction);
+					world1.entityJoinedWorld(moving1);
+					EntityFallingSand2 moving = new EntityFallingSand2(world1, (double)((float)i2 + 0.5F), (double)((float)i3 + 0.5F), (double)((float)i4 + 0.5F), bid, damage, direction);
+					world1.entityJoinedWorld(moving);
+				}
+
+			}
+		}
 	}
 
 	public int tickRate() {
