@@ -70,7 +70,7 @@ public class mod_DumbStorage extends BaseMod {
 
 
     public String Version () {
-        return "DumbStorage 0.4.0";
+        return "DumbStorage 0.4.1";
     }
     public mod_DumbStorage(){
 

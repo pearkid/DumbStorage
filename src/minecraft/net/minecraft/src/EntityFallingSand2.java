@@ -264,10 +264,12 @@ public class EntityFallingSand2 extends Entity {
 
 	protected void writeEntityToNBT(NBTTagCompound nBTTagCompound1) {
 		nBTTagCompound1.setByte("Tile", (byte)this.blockID);
+		nBTTagCompound1.setByte("Meta", this.thing);
 	}
 
 	protected void readEntityFromNBT(NBTTagCompound nBTTagCompound1) {
 		this.blockID = nBTTagCompound1.getByte("Tile") & 255;
+		this.thing = nBTTagCompound1.getByte("Meta");
 	}
 
 	public float getShadowSize() {

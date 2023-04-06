@@ -1155,7 +1155,7 @@ public class BlockMagnet extends Block {
 
 				if(canFallBelow(world1, i2, i3 + 2, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 3, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 4, i4) && i3 >= 0|| canFallBelow(world1, i2, i3 + 5, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 6, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 7, i4) && i3 >= 0 || canFallBelow(world1, i2, i3 + 8, i4) && i3 >= 0) {
 					if(bid1 != 0 && bid1 != Block.dispenser.blockID && bid1 != Block.pistonMoving.blockID && bid1 != Block.blockSteel.blockID && bid1 != Block.obsidian.blockID && bid1 != Block.mobSpawner.blockID && bid1 != Block.stoneOvenIdle.blockID && bid1 != Block.stoneOvenActive.blockID && bid1 != Block.chest.blockID && bid1 != Block.pistonExtension.blockID){
-						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 5 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
+						if(bid1 == mod_DumbStorage.magnetID && bmd1 == 4 || bid1 == mod_DumbStorage.magnetID && bmd1 == 6 || bid1 == Block.pistonExtension.blockID|| bid1 == Block.pistonBase.blockID && bmd1 >= 6 || bid1 == Block.pistonStickyBase.blockID && bmd1 >= 6 || bid1 == Block.blockBed.blockID) {
 							bs1 = false;
 						} else {
 							bs1 = true;
