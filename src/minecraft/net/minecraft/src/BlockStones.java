@@ -6,17 +6,41 @@ public class BlockStones extends Block {
 	public static final String[] stonesnames = new String[]{"x", "two", "three", "four", "sone", "stwo", "sthree", "sfour"};
 
 	public BlockStones(int i1) {
-		super(i1, 14, Material.rock);
+		super(i1, Material.rock);
 		this.setLightOpacity(255);
 	}
+	public boolean canProvidePower() {
+		return true;
+	}
 
+
+
+	public void onBlockAdded(World world1, int i, int j, int k) {
+		world1.scheduleBlockUpdate(i, j, k, this.blockID, this.tickRate());
+		world1.notifyBlocksOfNeighborChange(i, j - 1, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i, j + 1, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i - 1, j, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i + 1, j, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i, j, k - 1, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i, j, k + 1, this.blockID);
+	}
+
+	public void onBlockRemoval(World world1, int i, int j, int k) {
+		world1.scheduleBlockUpdate(i, j, k, this.blockID, this.tickRate());
+		world1.notifyBlocksOfNeighborChange(i, j - 1, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i, j + 1, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i - 1, j, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i + 1, j, k, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i, j, k - 1, this.blockID);
+		world1.notifyBlocksOfNeighborChange(i, j, k + 1, this.blockID);
+	}
 
 	public int getBlockTextureFromSideAndMetadata(int i1, int i2) {
 		if (i2 == 0) {
 			return 181;
 		}
 		if (i2 == 1) {
-			return this.blockIndexInTexture = mod_DumbStorage.nulltex;
+			return this.blockIndexInTexture = mod_DumbStorage.redblocktex;
 		}
 		if (i2 == 2) {
 			return this.blockIndexInTexture = mod_DumbStorage.nulltex;
@@ -39,23 +63,8 @@ public class BlockStones extends Block {
 		return this.blockIndexInTexture;
 
 	}
-	public void onBlockAdded(World world1, int i2, int i3, int i4){
-		int md = world1.getBlockMetadata(i2, i3, i4);
-		if(md == 1) {
-			world1.setBlockAndMetadataWithNotify(i2, i3, i4, pistonBase.blockID, 6);
-		}
-		if(md == 2) {
-			world1.setBlockAndMetadataWithNotify(i2, i3, i4, pistonStickyBase.blockID, 6);
-		}
-		if(md == 3) {
 
 
-			for (int  f = 0; f < 15; ++f) {
-				world1.setBlockAndMetadata(i2, i3, i4 + (2 * f), 2, f);
-			}
-
-		}
-	}
 
 	public int getBlockTextureFromSide(int i1) {
 		return this.getBlockTextureFromSideAndMetadata(i1, 0);

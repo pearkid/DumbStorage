@@ -42,6 +42,7 @@ public class mod_DumbStorage extends BaseMod {
     public static int monmagtex4 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag4.png");
     public static int monmagtex5 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag5.png");
     public static int monmagtex6 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/monmag6.png");
+    public static int redblocktex = ModLoader.addOverride("/terrain.png","/DumbStorageTextures/RedstoneBlock.png");
 
     /*public static int texture0 = 0;
     public static int texture1 = 1;
@@ -65,6 +66,8 @@ public class mod_DumbStorage extends BaseMod {
     public static int stonesID = 253;
     @MLProp
     public static int magnetID = 252;
+    @MLProp
+    public static int redstoneID = 251;
     @MLProp
     public static int FSid = 50;
 
