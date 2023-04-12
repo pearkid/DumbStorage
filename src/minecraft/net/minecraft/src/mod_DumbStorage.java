@@ -1,5 +1,7 @@
 package net.minecraft.src;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.Map;
 import java.util.Random;
 
@@ -8,7 +10,25 @@ public class mod_DumbStorage extends BaseMod {
     public void AddRenderer(@SuppressWarnings("rawtypes") Map map) {
         map.put(EntityFallingSand2.class, new RenderMovingBlock());
     }
+    /*@Override
+    public void ModsLoaded(){
+        Block.class.getDeclaredField(ModLoader.isModLoaded("net.minecraft.src.mod_DumbStorage") ? "redstoneWire" : "aw");
 
+    }
+    static void setFinalStatic(Field field, Object newValue) throws Exception {
+        field.setAccessible(true);
+
+        Field modifiersField = Block.class.getDeclaredField("aw");
+        modifiersField.setAccessible(true);
+        modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
+
+        field.set(null, newValue);
+    }
+    public static void main(String args[]) throws Exception {
+        setFinalStatic(BlockRedstoneWire.class.getField("aw"), (new BlockProxyRedstoneWire(55, 164)).setHardness(0.0F).setStepSound(Block.soundPowderFootstep).setBlockName("redstoneDust").disableStats().disableNeighborNotifyOnMetadataChange());
+
+        System.out.format("Everything is %s", false); // "Everything is true"
+    }*/
     public static int nulltex = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/MissingTexture.png");
     public static int dirttex1 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/soloDirts.png");
     public static int dirttex2 = ModLoader.addOverride("/terrain.png", "/DumbStorageTextures/DuoDirts.png");
@@ -79,6 +99,23 @@ public class mod_DumbStorage extends BaseMod {
 
         new DumbSBlocks();
 
+        Block.blocksList[55] = null;
+        Block redstoneDust = (new BlockProxyRedstoneWire(55, 164)).setHardness(0.0F).setStepSound(Block.soundPowderFootstep).setBlockName("redstoneDust").disableStats().disableNeighborNotifyOnMetadataChange();
+        Block.blocksList[50] = null;
+        Block torchWood = (new BlockProxyTorch(50, 80)).setHardness(0.0F).setLightValue(0.9375F).setStepSound(Block.soundWoodFootstep).setBlockName("torch").disableNeighborNotifyOnMetadataChange();
+        Block.blocksList[75] = null;
+        Block torchRedstoneIdle = (new BlockProxyRedstoneTorch(75, 115, false)).setHardness(0.0F).setStepSound(Block.soundWoodFootstep).setBlockName("notGate").disableNeighborNotifyOnMetadataChange();
+        Block.blocksList[76] = null;
+        Block torchRedstoneActive = (new BlockProxyRedstoneTorch(76, 99, true)).setHardness(0.0F).setLightValue(0.5F).setStepSound(Block.soundWoodFootstep).setBlockName("notGate").disableNeighborNotifyOnMetadataChange();
+        Block.blocksList[93] = null;
+        Block redstoneRepeaterIdle = (new BlockProxyRedstoneRepeater(93, false)).setHardness(0.0F).setStepSound(Block.soundWoodFootstep).setBlockName("diode").disableStats().disableNeighborNotifyOnMetadataChange();
+        Block.blocksList[94] = null;
+        Block redstoneRepeaterActive = (new BlockProxyRedstoneRepeater(94, true)).setHardness(0.0F).setLightValue(0.625F).setStepSound(Block.soundWoodFootstep).setBlockName("diode").disableStats().disableNeighborNotifyOnMetadataChange();
+
+        Item.itemsList[Item.redstone.shiftedIndex] = null;
+        Item redstone = (new ItemProxyRedstone(Item.redstone.shiftedIndex - 256)).setIconCoord(8, 3).setItemName("redstone");
+        Item.itemsList[Item.redstoneRepeater.shiftedIndex] = null;
+        Item redstoneRepeater = (new ItemReed(100, Block.redstoneRepeaterIdle)).setIconCoord(6, 5).setItemName("diode");
         ModLoader.RegisterEntityID(EntityFallingSand2.class, "fallingsand2",FSid);
 
     }
