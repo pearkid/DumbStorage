@@ -123,6 +123,8 @@ public class mod_DumbStorage extends BaseMod {
         Block doorSteel = (new BlockProxyDoor(71, Material.iron)).setHardness(5.0F).setStepSound(Block.soundMetalFootstep).setBlockName("doorIron").disableStats().disableNeighborNotifyOnMetadataChange();
         Block.blocksList[64] = null;
         Block doorWood = (new BlockProxyDoor(64, Material.wood)).setHardness(3.0F).setStepSound(Block.soundWoodFootstep).setBlockName("doorWood").disableStats().disableNeighborNotifyOnMetadataChange();
+        Block.blocksList[69] = null;
+        Block lever = (new BlockProxyLever(69, 96)).setHardness(0.5F).setStepSound(Block.soundWoodFootstep).setBlockName("lever").disableNeighborNotifyOnMetadataChange();
 
         Item.itemsList[Item.redstone.shiftedIndex] = null;
         Item redstone = (new ItemProxyRedstone(Item.redstone.shiftedIndex - 256)).setIconCoord(8, 3).setItemName("redstone");
