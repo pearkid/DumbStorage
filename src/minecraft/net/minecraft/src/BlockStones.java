@@ -7,32 +7,6 @@ public class BlockStones extends Block {
 
 	public BlockStones(int i1) {
 		super(i1, Material.rock);
-		this.setLightOpacity(255);
-	}
-	public boolean canProvidePower() {
-		return true;
-	}
-
-
-
-	public void onBlockAdded(World world1, int i, int j, int k) {
-		world1.scheduleBlockUpdate(i, j, k, this.blockID, this.tickRate());
-		world1.notifyBlocksOfNeighborChange(i, j - 1, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i, j + 1, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i - 1, j, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i + 1, j, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i, j, k - 1, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i, j, k + 1, this.blockID);
-	}
-
-	public void onBlockRemoval(World world1, int i, int j, int k) {
-		world1.scheduleBlockUpdate(i, j, k, this.blockID, this.tickRate());
-		world1.notifyBlocksOfNeighborChange(i, j - 1, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i, j + 1, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i - 1, j, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i + 1, j, k, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i, j, k - 1, this.blockID);
-		world1.notifyBlocksOfNeighborChange(i, j, k + 1, this.blockID);
 	}
 
 	public int getBlockTextureFromSideAndMetadata(int i1, int i2) {
@@ -40,7 +14,7 @@ public class BlockStones extends Block {
 			return 181;
 		}
 		if (i2 == 1) {
-			return this.blockIndexInTexture = mod_DumbStorage.redblocktex;
+			return this.blockIndexInTexture = mod_DumbStorage.nulltex;
 		}
 		if (i2 == 2) {
 			return this.blockIndexInTexture = mod_DumbStorage.nulltex;

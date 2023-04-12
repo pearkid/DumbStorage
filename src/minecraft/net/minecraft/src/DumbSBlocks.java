@@ -9,18 +9,21 @@ public class DumbSBlocks {
     public static Block dirts;
     public static Block stones;
     public static Block magnet;
+    public static Block redstone;
 
 
     public DumbSBlocks() {
         snadStone = (new BlockSnadStone(mod_DumbStorage.snadStoneID)).setStepSound(Block.soundStoneFootstep).setHardness(0.8F).setBlockName("snadStone");
         dirts = (new BlockDirts(mod_DumbStorage.dirtsID)).setHardness(0.5F).setStepSound(Block.soundGravelFootstep).setBlockName("dirts");
-        stones = (new BlockStones(mod_DumbStorage.stonesID)).setHardness(0.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("stones").disableNeighborNotifyOnMetadataChange();
-        magnet = (new BlockMagnet(mod_DumbStorage.magnetID)).setHardness(0.1F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setBlockName("magnet");
+        stones = (new BlockStones(mod_DumbStorage.stonesID)).setHardness(1.0F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("stones");
+        magnet = (new BlockMagnet(mod_DumbStorage.magnetID)).setHardness(0.2F).setResistance(10.0F).setStepSound(Block.soundMetalFootstep).setBlockName("magnet");
+        redstone = (new BlockRedstone(mod_DumbStorage.redstoneID)).setHardness(0.5F).setResistance(10.0F).setStepSound(Block.soundStoneFootstep).setBlockName("redstone").disableNeighborNotifyOnMetadataChange();
 
         ModLoader.RegisterBlock(snadStone, ItemSnadStone.class);
         ModLoader.RegisterBlock(dirts, ItemDirts.class);
         ModLoader.RegisterBlock(stones, ItemStones.class);
         ModLoader.RegisterBlock(magnet, ItemMagnet.class);
+        ModLoader.RegisterBlock(redstone, ItemRedstoneBlock.class);
 
         ModLoader.AddLocalization("tile.dirts.name", "Dirts");
         ModLoader.AddLocalization("tile.snadStone.name", "Snadstone");
@@ -53,6 +56,7 @@ public class DumbSBlocks {
         ModLoader.AddLocalization("tile.magnet.mX.name", "Bidirectional Monster Magnet");
         ModLoader.AddLocalization("tile.magnet.mY.name", "Bidirectional Monster Magnet");
         ModLoader.AddLocalization("tile.magnet.mZ.name", "Bidirectional Monster Magnet");
+        ModLoader.AddLocalization("tile.redstone.power", "Redstone Block");
 
         ModLoader.AddRecipe(new ItemStack(Block.lockedChest, 4), new Object[]{"X", Character.valueOf('X'), Block.chest});
         ModLoader.AddRecipe(new ItemStack(snadStone, 1), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), Block.sand});
