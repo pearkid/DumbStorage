@@ -107,7 +107,7 @@ public class DumbSBlocks {
         ModLoader.AddRecipe(new ItemStack(stones, 9, 0), new Object[]{"X", Character.valueOf('X'), new ItemStack(stones, 1, 1)});
         ModLoader.AddRecipe(new ItemStack(stones, 9, 1), new Object[]{"X", Character.valueOf('X'), new ItemStack(stones, 1, 2)});
         ModLoader.AddRecipe(new ItemStack(stones, 9, 2), new Object[]{"X", Character.valueOf('X'), new ItemStack(stones, 1, 3)});
-
+        ModLoader.AddRecipe(new ItemStack(redstone, 1, 0), new Object[]{"XXX", "XXX", "XXX", Character.valueOf('X'), new ItemStack(Item.redstone, 1)});
 
         if (testenabled == true) {
             ModLoader.AddRecipe(new ItemStack(stones, 9, 0), new Object[]{"X", Character.valueOf('X'), Block.stone});

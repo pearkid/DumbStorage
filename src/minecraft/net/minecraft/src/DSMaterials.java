@@ -21,7 +21,7 @@ public class DSMaterials extends Material{
     }
 
     public boolean getCanBlockGrass() {
-        return true;
+        return false;
     }
 
     public boolean getIsSolid() {
